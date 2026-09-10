@@ -1,0 +1,10 @@
+2026-09-10, Linux x86_64, Python 3.13.5
+Command: python -m pytest -q --color=no
+...............................................                          [100%]
+47 passed in 4.58s
+
+Verified source/test Git blobs match the prepared repository tree.
+Input: normalized blue-selection raster, not original color screenshot.
+Geometry and API dry-run passed for examples/l_shape_job.json.
+No real diffusion-model inference was performed. This is not a Mac benchmark.
+GitHub Actions results must be read independently after publication.

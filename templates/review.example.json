@@ -1,0 +1,19 @@
+{
+  "building_id": "02_l_shape_pilot",
+  "outline_reviewed": false,
+  "geometry_passed": false,
+  "local_inference_executed": false,
+  "generated_pixels_visually_reviewed": false,
+  "chinese_labels_reviewed": false,
+  "core_alignment_reviewed": false,
+  "concept_approved": false,
+  "engineering_review": "not_performed",
+  "reviewer": null,
+  "review_time": null,
+  "open_issues": [],
+  "software_commit": null,
+  "model_file_sha256": {},
+  "machine": {"chip": null, "memory_gb": 16, "macos": null},
+  "measured_generation_seconds": null,
+  "measured_peak_memory_gb": null
+}

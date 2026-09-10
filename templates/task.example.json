@@ -1,0 +1,18 @@
+{
+  "skill": "outline-floorplan-local",
+  "building_id": "02_l_shape_pilot",
+  "source_image": "examples/source_crops/02.png",
+  "outline_review": "pending",
+  "building_use": "发电厂辅助控制与办公用房概念方案",
+  "floors": [1, 2, 3],
+  "footprint_policy": "same",
+  "scale": null,
+  "drawing_units": "diagram_units",
+  "required_functions_building": ["辅助机房", "机柜区", "办公室", "楼梯", "卫生间", "公共走廊"],
+  "required_functions_each_floor": ["楼梯", "卫生间", "公共走廊"],
+  "backend": "comfyui_sd15_canny_img2img",
+  "generation": {"width": 512, "height": 512, "batch_size": 1, "concurrency": 1, "steps": 24, "cfg": 6.0, "denoise": 0.3, "controlnet_strength": 0.9, "seed": 42001},
+  "output_directory": "runs/02",
+  "deliverable": "one_building_one_board_three_floors",
+  "construction_ready": false
+}
