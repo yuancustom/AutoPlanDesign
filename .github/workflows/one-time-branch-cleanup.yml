@@ -1,20 +1,17 @@
 name: One-time reviewed branch cleanup
-
 on:
   push:
     branches: [main]
     paths: ['.github/workflows/one-time-branch-cleanup.yml']
-
 permissions:
   contents: write
-
 jobs:
   cleanup:
-    if: github.repository == 'yuancustom/AutoPlanDesign' && github.event.head_commit.message == 'chore: remove reviewed non-main branches'
+    if: github.repository == 'yuancustom/AutoPlanDesign' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
-      - name: Verify exact heads, delete only reviewed branches, preserve main
+      - name: Check exact branch heads and remove only reviewed branches
         env:
           GH_TOKEN: ${{ github.token }}
         shell: bash
@@ -54,7 +51,6 @@ jobs:
               if ref['object']['sha'] != sha:
                   raise RuntimeError('Branch changed after review: ' + branch)
               pending.append(branch)
-          # All targets have been checked before the first deletion.
           for branch in pending:
               ref_path = '/git/ref/heads/' + urllib.parse.quote(branch, safe='/')
               current = api(ref_path)
@@ -66,8 +62,7 @@ jobs:
               print('Deleted:', branch, 'previous head:', expected[branch])
           main = api('/git/ref/heads/main')
           print('Preserved main:', main['object']['sha'])
-          branches = api('/branches?per_page=100')
-          names = [item['name'] for item in branches]
+          names = [item['name'] for item in api('/branches?per_page=100')]
           print('Remaining branches:', json.dumps(names))
           if names != ['main']:
               raise RuntimeError('Unexpected remaining branches; no further branches deleted')
