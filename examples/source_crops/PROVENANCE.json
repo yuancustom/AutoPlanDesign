@@ -1,0 +1,16 @@
+{
+  "source_representation": "normalized blue-selection raster, NOT original color screenshot",
+  "original_crop_sha256": "185e83462b830121e36816dbfa545881cd942bb1656e07cfa8cc74d85f1906d4",
+  "original_crop_git_blob_sha1": "fbd9719cf1aa6708836ac7acd0349632292a9b34",
+  "original_crop_size_bytes": 40681,
+  "original_crop_dimensions": [307, 214],
+  "original_attachment_archive_sha256": "91d1c1bd049d1b8e58983066bc94e3aecbc18f48b9b4600a98671d007c55321f",
+  "committed_path": "examples/source_crops/02.png",
+  "committed_sha256": "1ce06270338ee5c1db62bfdc427c9d6a9b3e487fe04df1aef4ee3940e9c7531d",
+  "blue_selection_equal_before_and_after": true,
+  "blue_selection_sha256": "0b72374b03493ded68ea6ab25278bfb565bdb7444347c49e9b1d2ff2463894e3",
+  "selection_rule": "(B-R)>20 and (G-R)>10 and R>60",
+  "colors": {"inside": [170, 215, 245], "outside": [255, 255, 255]},
+  "geometry_change": false,
+  "notes": "Preserves each selected footprint pixel and the original canvas. Removes color gradients, text, and background noise. The raw color crop is retained in the prior conversation ZIP, not represented here as a byte-identical original."
+}

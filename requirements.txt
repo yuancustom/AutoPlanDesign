@@ -1,0 +1,7 @@
+# Geometry / image tools only. Install diffusion backends in separate environments.
+Pillow>=10,<13
+numpy>=1.26,<3
+opencv-python-headless>=4.9,<5
+shapely>=2.0,<3
+requests>=2.31,<3
+pytest>=8,<10

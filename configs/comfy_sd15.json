@@ -1,0 +1,12 @@
+{
+  "family": "sd15",
+  "server": "http://127.0.0.1:8188",
+  "checkpoint": "v1-5-pruned-emaonly.safetensors",
+  "controlnet": "control_v11p_sd15_canny_fp16.safetensors",
+  "seed": 42001,
+  "steps": 24,
+  "cfg": 6.0,
+  "denoise": 0.3,
+  "strength": 0.9,
+  "timeout": 1800
+}
