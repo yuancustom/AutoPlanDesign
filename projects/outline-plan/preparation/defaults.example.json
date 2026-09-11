@@ -1,0 +1,33 @@
+{
+  "schema_version": "p1-preparation-0.2.0",
+  "status": "DEMO_DEFAULTS_NOT_APPROVED",
+  "preset": "auxiliary-control-office",
+  "value_origin": "DESIGN_PROPOSAL",
+  "user_confirmed": false,
+  "geometry_dimensions_m": null,
+  "count_scope": "whole_building",
+  "count_constraint": "exact",
+  "floor_count": 3,
+  "totals": {"office_workstations": 24, "racks": 24, "machine_rooms": 3, "offices": 5, "meeting_rooms": 2, "meeting_seats": 16, "control_seats": 6},
+  "floors": [
+    {"floor_id": "F01", "office_workstations": 4, "office_rooms": 1, "racks": 16, "machine_rooms": 2, "meeting_rooms": 0, "meeting_seats": 0, "control_seats": 0, "wc_rooms": 2, "height_m": 4},
+    {"floor_id": "F02", "office_workstations": 12, "office_rooms": 2, "racks": 8, "machine_rooms": 1, "meeting_rooms": 1, "meeting_seats": 8, "control_seats": 6, "wc_rooms": 2, "height_m": 3},
+    {"floor_id": "F03", "office_workstations": 8, "office_rooms": 2, "racks": 0, "machine_rooms": 0, "meeting_rooms": 1, "meeting_seats": 8, "control_seats": 0, "wc_rooms": 2, "height_m": 3}
+  ],
+  "rack_groups": [
+    {"room_id": "F01-M01", "floor_id": "F01", "racks": 8},
+    {"room_id": "F01-M02", "floor_id": "F01", "racks": 8},
+    {"room_id": "F02-M01", "floor_id": "F02", "racks": 8}
+  ],
+  "office_groups": [
+    {"room_id": "F01-O01", "floor_id": "F01", "workstations": 4},
+    {"room_id": "F02-O01", "floor_id": "F02", "workstations": 6},
+    {"room_id": "F02-O02", "floor_id": "F02", "workstations": 6},
+    {"room_id": "F03-O01", "floor_id": "F03", "workstations": 4},
+    {"room_id": "F03-O02", "floor_id": "F03", "workstations": 4}
+  ],
+  "concept_geometry_defaults_m": {"outer_wall": 0.30, "inner_wall": 0.20, "corridor_clear_width": 2.40, "rack_width": 0.60, "rack_depth": 1.20, "rack_front_clearance": 1.20, "rack_rear_clearance": 1.00, "desk_width": 1.40, "desk_depth": 0.70},
+  "requested_stair_core_count": 2,
+  "engineering_compliance": "NOT_CHECKED",
+  "notes": ["All values are editable proposal defaults, not site facts or regulatory requirements.", "Workstations exclude meeting seats and control-console seats.", "Actual SVG scale is mandatory for metric outline freezing; no default site dimensions."]
+}

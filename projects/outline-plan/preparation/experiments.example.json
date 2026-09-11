@@ -1,0 +1,26 @@
+{
+  "schema_version": "p1-preparation-0.2.0",
+  "status": "NOT_RUN",
+  "input_snapshot_id": null,
+  "layout_sha256": null,
+  "requires_frozen_input": true,
+  "network_policy": "LOCAL_ONLY",
+  "concurrency": 1,
+  "batch_size": 1,
+  "floor_ids": ["F01", "F02", "F03"],
+  "seeds": [11, 29, 47],
+  "profiles": [
+    {"id": "T0", "mode": "layout_only", "planner": "deterministic", "renderer": "deterministic", "adapter_status": "NEW_P1_NOT_IMPLEMENTED"},
+    {"id": "A1", "mode": "layout_only", "planner": "ollama:qwen3:4b", "renderer": "deterministic", "adapter_status": "PLANNED"},
+    {"id": "A2", "mode": "layout_only", "planner": "ollama:qwen3:8b", "renderer": "deterministic", "adapter_status": "PLANNED"},
+    {"id": "B1", "mode": "render_only", "planner": "frozen_layout", "renderer": "comfy:sd15-canny", "adapter_status": "LEGACY_PROTOCOL_ONLY"},
+    {"id": "B2", "mode": "render_only", "planner": "frozen_layout", "renderer": "comfy:sdxl-canny", "adapter_status": "PLANNED"},
+    {"id": "B3", "mode": "render_only", "planner": "frozen_layout", "renderer": "mflux:flux2-klein-4b-edit", "adapter_status": "PLANNED"}
+  ],
+  "render_comparison_profile_ids": ["B1", "B2", "B3"],
+  "render_comparison_attempts_if_all_compatible": 27,
+  "execution_requires": ["immutable_input_snapshot", "matching_layout_for_render_only", "installed_model_digests", "tested_backend_compatibility", "parameter_revision", "memory_preflight"],
+  "metrics": null,
+  "outputs": [],
+  "notice": "Configuration proposal, not an executable workflow or completed benchmark. T0 is not repeated for random seeds."
+}

@@ -1,0 +1,17 @@
+{
+  "status": "DESIGN_REVIEW",
+  "scope": "P1 preparation only; master implementation statuses unchanged",
+  "tasks": [
+    {"id":"PREP-01","parent_tasks":["P1-01","P1-02","P1-03","P1-04"],"status":"REVIEW","title":"Review frontend, algorithms, parameters and model experiment design","depends_on":[]},
+    {"id":"SVG-01","parent_tasks":["P1-01"],"status":"TODO","title":"Safe SVG import and metric calibration","depends_on":["PREP-01"]},
+    {"id":"UI-01","parent_tasks":["P1-01"],"status":"TODO","title":"SVG editor, rulers, edge editing and undo","depends_on":["PREP-01"]},
+    {"id":"DIM-01","parent_tasks":["P1-01"],"status":"TODO","title":"Engineering outline export from confirmed geometry","depends_on":["SVG-01","UI-01"]},
+    {"id":"FORM-01","parent_tasks":["P1-02"],"status":"TODO","title":"Parameter form, totals, room groups and allocation","depends_on":["PREP-01"]},
+    {"id":"ALG-01","parent_tasks":["P1-02"],"status":"TODO","title":"Orthogonal layout solver and continuous validation","depends_on":["SVG-01","FORM-01"]},
+    {"id":"MODEL-01","parent_tasks":["P1-03"],"status":"TODO","title":"Ollama and ComfyUI actual model adapters","depends_on":["ALG-01","DIM-01"]},
+    {"id":"TRACE-01","parent_tasks":["P1-03"],"status":"TODO","title":"Persistent public decision events and SSE resume","depends_on":["PREP-01"]},
+    {"id":"EXP-01","parent_tasks":["P1-04","BENCH-02"],"status":"TODO","title":"Frozen-input multi-model comparison","depends_on":["MODEL-01","TRACE-01"]},
+    {"id":"ACCEPT-01","parent_tasks":["P1-04","GOV-01"],"status":"TODO","title":"Whole-building acceptance and PlanRevision handoff","depends_on":["EXP-01"]}
+  ],
+  "acceptance_details": "../docs/P1_DEVELOPMENT_SPEC.md#6-实施拆解与就绪条件"
+}
