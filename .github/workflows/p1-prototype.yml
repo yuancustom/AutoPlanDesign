@@ -1,0 +1,33 @@
+name: P1 prototype helpers (no model inference)
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'projects/outline-plan/prototype/**'
+      - 'governance/delivery_status.json'
+      - '.github/workflows/p1-prototype.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  prototype-core:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node --test projects/outline-plan/prototype/tests/core.test.cjs
+      - name: Check documentation and prototype evidence references
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          data=json.loads(Path('governance/delivery_status.json').read_text())
+          for item in data['items']:
+              assert item['model_execution']=='NOT_RUN'
+              for name in item['evidence']:
+                  assert Path(name).is_file(), name
+          print('Documentation references checked; no model was run.')
+          PY

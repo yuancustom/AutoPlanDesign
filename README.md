@@ -1,12 +1,22 @@
 # AutoPlanDesign · 三项目协同开发
 
-**开发总控入口：[CONTROL.md](CONTROL.md)**。本轮是架构重整与治理基线，不是三个模型项目已经全部实现。
+**开发总控入口：[CONTROL.md](CONTROL.md)**。三个独立项目分别交付文档、代码、测试和使用说明，再组合为完整Agent；不能把文档或交互原型当成生产系统已经实现。
+
+## 文档与原型入口（v0.3）
+
+[三项目文档与代码双交付计划](governance/DOC_CODE_DELIVERY.md) · [分维度交付状态](governance/delivery_status.json)
+
+**P1：[可操作原型源码](projects/outline-plan/prototype/index.html) · [运行说明](projects/outline-plan/prototype/README.md) · [交互与体验路线](projects/outline-plan/docs/UX_PROTOTYPE_GUIDE.md)**
+
+GitHub文件页显示源码，不会自动运行HTML。将原型保存到本机后用浏览器打开，或按运行说明启动本机静态预览。没有配置Pages或公开原型服务。
+
+P1原型支持受限SVG导入/绘制/拖点、尺寸校准与SVG/PNG导出、分层数量校验、模型意向与快照、示例流程。结果是固定合成示意，不按参数排房，不调用模型，不做正式审批。
 
 | 独立项目 | 职责 | 当前状态 |
 |---|---|---|
-| [P1 / outline-plan](projects/outline-plan/README.md) | 带尺寸闭合轮廓 → 多楼层初步平面图及几何数据 | 旧 L 形示意基线保留；米制校准、通用布局与模型对比待开发 |
-| [P2 / region-edit](projects/region-edit/README.md) | 涂抹区域＋文字 → 局部修改、版本与过程记录 | 项目骨架与输入协议；画布、模型及持久化审计待开发 |
-| [P3 / plan-delivery](projects/plan-delivery/README.md) | 已确认平面图 → 共享建筑几何 → DXF / PDF / GLB | 已导入用户既有 Skill 的16个文件；Schema和两个检查脚本写入被平台拦截，完整适配为BLOCKED |
+| [P1 / outline-plan](projects/outline-plan/README.md) | 带尺寸闭合轮廓 → 多楼层初步平面图及几何数据 | 交互原型与设计文档；旧L形基线保留；正式API/通用布局/模型对比待开发 |
+| [P2 / region-edit](projects/region-edit/README.md) | 涂抹区域＋文字 → 局部修改、版本与过程记录 | [文档到代码计划](projects/region-edit/docs/DOC_CODE_PLAN.md)；已有包骨架，业务能力未实现 |
+| [P3 / plan-delivery](projects/plan-delivery/README.md) | 确认平面 → 三维与二维图纸，网页查看 | [文档到代码与Viewer计划](projects/plan-delivery/docs/DOC_CODE_PLAN.md)；原Skill缺3文件的导入阻塞保留 |
 
 ## 架构原则
 
@@ -22,14 +32,13 @@
 python -m pip install -r requirements-dev.txt
 python tools/check_governance.py
 python -m pytest tests -q
+node --test projects/outline-plan/prototype/tests/core.test.cjs
 ```
 
-各项目可单独运行：进入项目目录，`python -m pip install -e .`，然后 `python -m <模块名> --capabilities`。当前新包只返回真实能力状态，不会生成假平面图、假修改记录或假三维成果。
-
-模块名分别为 `autoplan_outline`、`autoplan_region`、`autoplan_delivery`。旧 P1 基线的复现见其项目 README。
+各项目的Python包仍只提供能力探测骨架。P1浏览器原型是单独代码，不表示包内已实现正式后端；P2/P3尚未新增业务实现。对应能力状态和阻塞分别记录，不用一个完成标志代替。
 
 ## 当前真实边界
 
-没有在用户 Mac mini 16GB 上完成真实模型对比；所有候选模型实验初始化为 `NOT_RUN`。CI 仅验证治理配置、接口样例、独立项目骨架、历史基线；P3原检查脚本因导入阻塞未运行。不把 CI 成功、mock、dry-run 当成模型效果或工程合规。
+没有在用户Mac mini 16GB上完成真实模型对比；模型实验仍为NOT_RUN。CI只验证治理/合同/骨架/历史基线和原型助手；原型浏览器测试范围见其TEST_REPORT。P3原检查脚本因导入阻塞未运行，BIMFACE账号及GLB路径尚未实测。
 
-旧根目录实现整体保存在 `projects/outline-plan/baseline/`，对应提交 `9be671d75484f497f474aa5b8df23a0a02d429ad`；Git 历史保留。按用户约定直接维护 `main`，本次不创建分支或 PR。
+旧根实现完整保存在 `projects/outline-plan/baseline/`，对应提交 `9be671d75484f497f474aa5b8df23a0a02d429ad`；Git历史保留。按用户约定直接维护main，本次不创建分支或PR。

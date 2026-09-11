@@ -1,0 +1,49 @@
+{
+  "version": "0.3.0",
+  "scope": "supplement to backlog.json, not a replacement",
+  "updated": "2026-09-11",
+  "items": [
+    {
+      "id": "DOC-CODE-01",
+      "project": "COMMON",
+      "documentation": "WRITTEN",
+      "prototype": "NOT_APPLICABLE",
+      "implementation": "PLAN_ONLY",
+      "model_execution": "NOT_RUN",
+      "human_acceptance": "PENDING",
+      "evidence": ["governance/DOC_CODE_DELIVERY.md"]
+    },
+    {
+      "id": "P1-UX-01",
+      "project": "P1",
+      "documentation": "WRITTEN",
+      "prototype": "BROWSER_TESTED",
+      "implementation": "PROTOTYPE_ONLY",
+      "model_execution": "NOT_RUN",
+      "human_acceptance": "PENDING",
+      "parent_tasks": ["P1-01", "P1-02", "P1-03", "P1-04"],
+      "evidence": ["projects/outline-plan/prototype/index.html", "projects/outline-plan/prototype/TEST_REPORT.md", "projects/outline-plan/docs/UX_PROTOTYPE_GUIDE.md"]
+    },
+    {
+      "id": "P2-DOC-CODE-01",
+      "project": "P2",
+      "documentation": "PLAN_WRITTEN",
+      "prototype": "NOT_STARTED",
+      "implementation": "EXISTING_SCAFFOLD_ONLY",
+      "model_execution": "NOT_RUN",
+      "human_acceptance": "PENDING",
+      "evidence": ["projects/region-edit/docs/DOC_CODE_PLAN.md"]
+    },
+    {
+      "id": "P3-DOC-CODE-01",
+      "project": "P3",
+      "documentation": "PLAN_WRITTEN",
+      "prototype": "NOT_STARTED",
+      "implementation": "EXISTING_SCAFFOLD_IMPORT_BLOCKED",
+      "model_execution": "NOT_RUN",
+      "human_acceptance": "PENDING",
+      "evidence": ["projects/plan-delivery/docs/DOC_CODE_PLAN.md", "projects/plan-delivery/IMPORT.json"]
+    }
+  ],
+  "master_backlog_statuses_changed": false
+}
