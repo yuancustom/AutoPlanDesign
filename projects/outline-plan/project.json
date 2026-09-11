@@ -1,0 +1,17 @@
+{
+  "id": "P1",
+  "name": "outline-plan",
+  "version": "0.1.0",
+  "module": "autoplan_outline",
+  "contract_version": "0.1.0",
+  "status": "GEOMETRY_BASELINE",
+  "capability": "dimensioned_outline_to_plan",
+  "model_inference_verified": false,
+  "planned_work": [
+    "米制尺度与证据校准",
+    "通用功能几何提案",
+    "本地模型对比"
+  ],
+  "entrypoint": "python -m autoplan_outline --capabilities",
+  "production_ready": false
+}

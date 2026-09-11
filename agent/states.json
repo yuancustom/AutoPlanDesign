@@ -1,0 +1,76 @@
+{
+  "version": "0.1.0",
+  "implementation": "DESIGN_ONLY",
+  "initial": "intake",
+  "terminal": [
+    "cancelled"
+  ],
+  "transitions": {
+    "intake": [
+      "scale_confirmed",
+      "blocked",
+      "cancelled"
+    ],
+    "scale_confirmed": [
+      "plan_candidate",
+      "blocked",
+      "cancelled"
+    ],
+    "plan_candidate": [
+      "plan_candidate",
+      "plan_approved",
+      "blocked",
+      "cancelled"
+    ],
+    "plan_approved": [
+      "edit_candidate",
+      "final_plan_approved",
+      "blocked",
+      "cancelled"
+    ],
+    "edit_candidate": [
+      "edit_candidate",
+      "plan_approved",
+      "blocked",
+      "cancelled"
+    ],
+    "final_plan_approved": [
+      "reconstruction",
+      "edit_candidate",
+      "blocked",
+      "cancelled"
+    ],
+    "reconstruction": [
+      "export_review",
+      "blocked",
+      "cancelled"
+    ],
+    "export_review": [
+      "delivered",
+      "reconstruction",
+      "edit_candidate",
+      "blocked",
+      "cancelled"
+    ],
+    "blocked": [
+      "intake",
+      "cancelled"
+    ],
+    "delivered": [
+      "edit_candidate"
+    ],
+    "cancelled": []
+  },
+  "guards": {
+    "scale_confirmed": "metric_evidence_and_transform_valid",
+    "plan_approved": "human_approval_bound_to_revision_hash",
+    "final_plan_approved": "human_final_approval_and_geometry_current",
+    "reconstruction": "all_floor_geometry_current_and_required_parameters_known",
+    "delivered": "export_readback_and_visual_review_passed"
+  },
+  "blocked_resume_policy": "explicit revalidation from intake; future checkpoint-based resume is AG-02",
+  "invalidation": "Any accepted plan edit invalidates affected geometry, reconstruction and export; require new approval.",
+  "quiescent": [
+    "delivered"
+  ]
+}

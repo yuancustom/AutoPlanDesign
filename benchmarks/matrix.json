@@ -1,0 +1,69 @@
+{
+  "version": "0.1.0",
+  "seed_protocol": [
+    11,
+    29,
+    47
+  ],
+  "datasets": {
+    "SYN-L-001": "contract fixture only; synthetic metric dimensions",
+    "LEGACY-L-02": "geometry baseline only; diagram units, no user metric dimensions",
+    "future_dev8_holdout4": "PLANNED_NOT_CREATED"
+  },
+  "projects": {
+    "P1": {
+      "stages": [
+        "dimension_calibration",
+        "layout_proposal",
+        "image_render",
+        "geometry_validation"
+      ],
+      "candidate_ids": [
+        "deterministic",
+        "qwen3-4b",
+        "qwen3-vl-4b",
+        "sd15-canny",
+        "qwen3-vl-8b",
+        "sdxl-base",
+        "flux2-klein-4b",
+        "qwen3-vl-32b"
+      ],
+      "status": "NOT_RUN"
+    },
+    "P2": {
+      "stages": [
+        "intent",
+        "mask_coordinates",
+        "local_edit",
+        "geometry_sync",
+        "audit_history"
+      ],
+      "candidate_ids": [
+        "deterministic",
+        "qwen3-4b",
+        "qwen3-vl-4b",
+        "sdxl-inpaint",
+        "flux2-klein-4b",
+        "qwen-image-edit",
+        "qwen3-vl-32b"
+      ],
+      "status": "NOT_RUN"
+    },
+    "P3": {
+      "stages": [
+        "plan_reading",
+        "BuildingIR",
+        "deterministic_export",
+        "readback"
+      ],
+      "candidate_ids": [
+        "deterministic",
+        "qwen3-vl-4b",
+        "qwen3-vl-8b",
+        "qwen3-vl-32b"
+      ],
+      "status": "NOT_RUN"
+    }
+  },
+  "routing_note": "按能力选组合，不是把每个候选应用到所有stage。T3需要额外本地硬件审批。"
+}

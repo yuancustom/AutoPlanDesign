@@ -1,0 +1,43 @@
+{
+  "schema_version": "0.1.0",
+  "test_only": true,
+  "project_id": "DEMO",
+  "building_id": "B01",
+  "floor_id": "F01",
+  "revision_id": "R0",
+  "parent_revision_id": null,
+  "image": {
+    "uri": "fixture://SYN-L-001/plan.png",
+    "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "kind": "FIXTURE_REFERENCE"
+  },
+  "geometry": {
+    "uri": "fixture://SYN-L-001/geometry.json",
+    "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "kind": "FIXTURE_REFERENCE"
+  },
+  "geometry_status": "CURRENT",
+  "world_unit": "m",
+  "image_size": [
+    30,
+    24
+  ],
+  "pixel_to_world": [
+    [
+      1,
+      0,
+      0
+    ],
+    [
+      0,
+      -1,
+      24
+    ],
+    [
+      0,
+      0,
+      1
+    ]
+  ],
+  "approval_event_id": null
+}

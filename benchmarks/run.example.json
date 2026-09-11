@@ -1,0 +1,17 @@
+{
+  "schema_version": "0.1.0",
+  "test_only": true,
+  "run_id": "EXAMPLE-NOT-RUN",
+  "project": "P1",
+  "case_id": "SYN-L-001",
+  "model_id": "sd15-canny",
+  "hardware_profile": "macmini-16g-local",
+  "execution_status": "NOT_RUN",
+  "input_hash": null,
+  "model_hash": null,
+  "seed": null,
+  "metrics": null,
+  "raw_output": null,
+  "error": null,
+  "human_review": "PENDING"
+}

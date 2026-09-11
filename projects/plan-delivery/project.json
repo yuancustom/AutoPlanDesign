@@ -1,0 +1,17 @@
+{
+  "id": "P3",
+  "name": "plan-delivery",
+  "version": "0.1.0",
+  "module": "autoplan_delivery",
+  "contract_version": "0.1.0",
+  "status": "SKILL_IMPORT_BLOCKED",
+  "capability": "approved_plan_to_dxf_pdf_glb",
+  "model_inference_verified": false,
+  "planned_work": [
+    "输入适配与BuildingIR",
+    "识图/建模引擎",
+    "三格式同源导出与回读"
+  ],
+  "entrypoint": "python -m autoplan_delivery --capabilities",
+  "production_ready": false
+}

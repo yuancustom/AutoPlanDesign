@@ -1,0 +1,17 @@
+{
+  "id": "P2",
+  "name": "region-edit",
+  "version": "0.1.0",
+  "module": "autoplan_region",
+  "contract_version": "0.1.0",
+  "status": "CONTRACT_ONLY",
+  "capability": "masked_revision_edit",
+  "model_inference_verified": false,
+  "planned_work": [
+    "涂抹画布与坐标回投",
+    "局部编辑模型适配",
+    "不可变版本和审计存储"
+  ],
+  "entrypoint": "python -m autoplan_region --capabilities",
+  "production_ready": false
+}

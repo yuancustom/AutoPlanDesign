@@ -1,0 +1,197 @@
+{
+  "registry_version": "0.1.0",
+  "identity_checked_date": "2026-09-11",
+  "default_network_policy": "LOCAL_ONLY",
+  "no_hardware_fit_guarantee": true,
+  "models": [
+    {
+      "id": "deterministic",
+      "tier": "T0",
+      "role": "deterministic",
+      "projects": [
+        "P1",
+        "P2",
+        "P3"
+      ],
+      "upstream": "规则/人工标注及同源几何工具",
+      "sources": [],
+      "adapter_status": "no_model",
+      "execution_status": "NOT_RUN",
+      "hardware_fit": "NOT_APPLICABLE",
+      "approved_for_default": false,
+      "requires_larger_hardware_review": false,
+      "notes": "候选身份不等于已集成、已授权运行或已测试；执行前固定模型/量化/后端版本和许可。"
+    },
+    {
+      "id": "qwen3-4b",
+      "tier": "T1",
+      "role": "language",
+      "projects": [
+        "P1",
+        "P2",
+        "P3"
+      ],
+      "upstream": "Qwen/Qwen3-4B",
+      "sources": [
+        "https://huggingface.co/Qwen/Qwen3-4B"
+      ],
+      "adapter_status": "adapter_planned",
+      "execution_status": "NOT_RUN",
+      "hardware_fit": "UNMEASURED",
+      "approved_for_default": false,
+      "requires_larger_hardware_review": false,
+      "notes": "候选身份不等于已集成、已授权运行或已测试；执行前固定模型/量化/后端版本和许可。"
+    },
+    {
+      "id": "qwen3-vl-4b",
+      "tier": "T1",
+      "role": "vision_language",
+      "projects": [
+        "P1",
+        "P2",
+        "P3"
+      ],
+      "upstream": "Qwen/Qwen3-VL-4B-Instruct",
+      "sources": [
+        "https://huggingface.co/Qwen/Qwen3-VL-4B-Instruct"
+      ],
+      "adapter_status": "adapter_planned",
+      "execution_status": "NOT_RUN",
+      "hardware_fit": "UNMEASURED",
+      "approved_for_default": false,
+      "requires_larger_hardware_review": false,
+      "notes": "候选身份不等于已集成、已授权运行或已测试；执行前固定模型/量化/后端版本和许可。"
+    },
+    {
+      "id": "sd15-canny",
+      "tier": "T1",
+      "role": "image_generation",
+      "projects": [
+        "P1"
+      ],
+      "upstream": "SD1.5 + ControlNet Canny",
+      "sources": [
+        "https://huggingface.co/lllyasviel/control_v11p_sd15_canny"
+      ],
+      "adapter_status": "legacy_dry_run_only",
+      "execution_status": "NOT_RUN",
+      "hardware_fit": "UNMEASURED",
+      "approved_for_default": false,
+      "requires_larger_hardware_review": false,
+      "notes": "候选身份不等于已集成、已授权运行或已测试；执行前固定模型/量化/后端版本和许可。"
+    },
+    {
+      "id": "qwen3-vl-8b",
+      "tier": "T2",
+      "role": "vision_language",
+      "projects": [
+        "P1",
+        "P2",
+        "P3"
+      ],
+      "upstream": "Qwen/Qwen3-VL-8B-Instruct",
+      "sources": [
+        "https://huggingface.co/Qwen/Qwen3-VL-8B-Instruct"
+      ],
+      "adapter_status": "adapter_planned",
+      "execution_status": "NOT_RUN",
+      "hardware_fit": "UNMEASURED",
+      "approved_for_default": false,
+      "requires_larger_hardware_review": false,
+      "notes": "候选身份不等于已集成、已授权运行或已测试；执行前固定模型/量化/后端版本和许可。"
+    },
+    {
+      "id": "sdxl-base",
+      "tier": "T2",
+      "role": "image_generation",
+      "projects": [
+        "P1"
+      ],
+      "upstream": "stabilityai/stable-diffusion-xl-base-1.0",
+      "sources": [
+        "https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0"
+      ],
+      "adapter_status": "adapter_planned",
+      "execution_status": "NOT_RUN",
+      "hardware_fit": "UNMEASURED",
+      "approved_for_default": false,
+      "requires_larger_hardware_review": false,
+      "notes": "候选身份不等于已集成、已授权运行或已测试；执行前固定模型/量化/后端版本和许可。"
+    },
+    {
+      "id": "sdxl-inpaint",
+      "tier": "T2",
+      "role": "image_editing",
+      "projects": [
+        "P2"
+      ],
+      "upstream": "diffusers/stable-diffusion-xl-1.0-inpainting-0.1",
+      "sources": [
+        "https://huggingface.co/diffusers/stable-diffusion-xl-1.0-inpainting-0.1"
+      ],
+      "adapter_status": "adapter_planned",
+      "execution_status": "NOT_RUN",
+      "hardware_fit": "UNMEASURED",
+      "approved_for_default": false,
+      "requires_larger_hardware_review": false,
+      "notes": "候选身份不等于已集成、已授权运行或已测试；执行前固定模型/量化/后端版本和许可。"
+    },
+    {
+      "id": "flux2-klein-4b",
+      "tier": "T2",
+      "role": "image_generation_editing",
+      "projects": [
+        "P1",
+        "P2"
+      ],
+      "upstream": "black-forest-labs/FLUX.2-klein-4B",
+      "sources": [
+        "https://huggingface.co/black-forest-labs/FLUX.2-klein-4B"
+      ],
+      "adapter_status": "adapter_planned",
+      "execution_status": "NOT_RUN",
+      "hardware_fit": "UNMEASURED",
+      "approved_for_default": false,
+      "requires_larger_hardware_review": false,
+      "notes": "候选身份不等于已集成、已授权运行或已测试；执行前固定模型/量化/后端版本和许可。"
+    },
+    {
+      "id": "qwen3-vl-32b",
+      "tier": "T3",
+      "role": "vision_language",
+      "projects": [
+        "P1",
+        "P2",
+        "P3"
+      ],
+      "upstream": "Qwen/Qwen3-VL-32B-Instruct",
+      "sources": [
+        "https://huggingface.co/Qwen/Qwen3-VL-32B-Instruct"
+      ],
+      "adapter_status": "adapter_planned",
+      "execution_status": "NOT_RUN",
+      "hardware_fit": "UNMEASURED",
+      "approved_for_default": false,
+      "requires_larger_hardware_review": true,
+      "notes": "候选身份不等于已集成、已授权运行或已测试；执行前固定模型/量化/后端版本和许可。"
+    },
+    {
+      "id": "qwen-image-edit",
+      "tier": "T3",
+      "role": "image_editing",
+      "projects": [
+        "P2"
+      ],
+      "upstream": "Qwen/Qwen-Image-Edit-2511",
+      "sources": [
+        "https://huggingface.co/Qwen/Qwen-Image-Edit-2511"
+      ],
+      "adapter_status": "adapter_planned",
+      "execution_status": "NOT_RUN",
+      "hardware_fit": "UNMEASURED",
+      "approved_for_default": false,
+      "requires_larger_hardware_review": true,
+      "notes": "候选身份不等于已集成、已授权运行或已测试；执行前固定模型/量化/后端版本和许可。"
+    }
+  ]
+}

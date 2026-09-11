@@ -1,0 +1,435 @@
+{
+  "schema_version": "1.0",
+  "project": {
+    "id": "H50x30",
+    "name": "三层H形建筑复原案例",
+    "revision": "V01-PROVISIONAL",
+    "stage": "draft",
+    "intent": "concept-reconstruction"
+  },
+  "sources": [
+    {
+      "id": "SRC01",
+      "path": "input/source_plan.png",
+      "kind": "raster",
+      "note": "本次对话提供的“发电厂内部设施平面方案｜08 H形”图片；示例不附原图，运行前替换路径"
+    }
+  ],
+  "facts": {
+    "overall_x_m": {
+      "value": 50,
+      "unit": "m",
+      "status": "user_confirmed",
+      "source_refs": [
+        "conversation:user-dimensions"
+      ],
+      "depends_on": [],
+      "approval": "confirmed",
+      "note": "当前对话用户明确给定；不是自动推断",
+      "critical": true,
+      "confidence": "high"
+    },
+    "overall_y_m": {
+      "value": 30,
+      "unit": "m",
+      "status": "user_confirmed",
+      "source_refs": [
+        "conversation:user-dimensions"
+      ],
+      "depends_on": [],
+      "approval": "confirmed",
+      "note": "当前对话用户明确给定；不是自动推断",
+      "critical": true,
+      "confidence": "high"
+    },
+    "base_elevation_m": {
+      "value": 0,
+      "unit": "m",
+      "status": "assumed",
+      "source_refs": [],
+      "depends_on": [],
+      "approval": "not_applicable",
+      "note": "仅将本地首层建模原点设为0的坐标约定，不是用户批准的设计参数，不是海拔/场地标高",
+      "critical": false,
+      "confidence": "high"
+    },
+    "height_reference": {
+      "value": "floor_to_floor_then_roof_datum",
+      "unit": null,
+      "status": "assumed",
+      "source_refs": [],
+      "depends_on": [],
+      "approval": "pending",
+      "note": "旧V01按楼面至楼面及顶层至屋面参考面解释；用户未明确区分层高/净高，后续应确认",
+      "critical": true,
+      "confidence": "medium"
+    },
+    "floor_h_1_m": {
+      "value": 4,
+      "unit": "m",
+      "status": "user_confirmed",
+      "source_refs": [
+        "conversation:user-dimensions"
+      ],
+      "depends_on": [],
+      "approval": "confirmed",
+      "note": "当前对话用户明确给定；不是自动推断",
+      "critical": true,
+      "confidence": "high"
+    },
+    "floor_h_2_m": {
+      "value": 3,
+      "unit": "m",
+      "status": "user_confirmed",
+      "source_refs": [
+        "conversation:user-dimensions"
+      ],
+      "depends_on": [],
+      "approval": "confirmed",
+      "note": "当前对话用户明确给定；不是自动推断",
+      "critical": true,
+      "confidence": "high"
+    },
+    "floor_h_3_m": {
+      "value": 3,
+      "unit": "m",
+      "status": "user_confirmed",
+      "source_refs": [
+        "conversation:user-dimensions"
+      ],
+      "depends_on": [],
+      "approval": "confirmed",
+      "note": "当前对话用户明确给定；不是自动推断",
+      "critical": true,
+      "confidence": "high"
+    },
+    "external_wall_m": {
+      "value": 0.3,
+      "unit": "m",
+      "status": "assumed",
+      "source_refs": [
+        "prior:V01-assumptions"
+      ],
+      "depends_on": [],
+      "approval": "pending",
+      "note": "旧V01重建值；非用户确认，不能当作所有项目的默认值",
+      "critical": false,
+      "confidence": "medium"
+    },
+    "internal_wall_m": {
+      "value": 0.2,
+      "unit": "m",
+      "status": "assumed",
+      "source_refs": [
+        "prior:V01-assumptions"
+      ],
+      "depends_on": [],
+      "approval": "pending",
+      "note": "旧V01重建值；非用户确认，不能当作所有项目的默认值",
+      "critical": false,
+      "confidence": "medium"
+    },
+    "slab_thickness_m": {
+      "value": 0.25,
+      "unit": "m",
+      "status": "assumed",
+      "source_refs": [
+        "prior:V01-assumptions"
+      ],
+      "depends_on": [],
+      "approval": "pending",
+      "note": "旧V01重建值；非用户确认，不能当作所有项目的默认值",
+      "critical": false,
+      "confidence": "medium"
+    },
+    "roof_type": {
+      "value": "flat_concept_slab",
+      "unit": null,
+      "status": "assumed",
+      "source_refs": [
+        "prior:V01-assumptions"
+      ],
+      "depends_on": [],
+      "approval": "pending",
+      "note": "未设计构造、女儿墙、防水或排水",
+      "critical": false,
+      "confidence": "medium"
+    },
+    "left_wing_m": {
+      "value": 17,
+      "unit": "m",
+      "status": "assumed",
+      "source_refs": [
+        "prior:V01-assumptions"
+      ],
+      "depends_on": [],
+      "approval": "pending",
+      "note": "旧V01重建值；非用户确认，不能当作所有项目的默认值",
+      "critical": false,
+      "confidence": "medium"
+    },
+    "right_wing_m": {
+      "value": 17,
+      "unit": "m",
+      "status": "assumed",
+      "source_refs": [
+        "prior:V01-assumptions"
+      ],
+      "depends_on": [],
+      "approval": "pending",
+      "note": "旧V01重建值；非用户确认，不能当作所有项目的默认值",
+      "critical": false,
+      "confidence": "medium"
+    },
+    "connector_width_m": {
+      "value": 16,
+      "unit": "m",
+      "status": "assumed",
+      "source_refs": [
+        "prior:V01-assumptions"
+      ],
+      "depends_on": [],
+      "approval": "pending",
+      "note": "旧V01重建值；非用户确认，不能当作所有项目的默认值",
+      "critical": false,
+      "confidence": "medium"
+    },
+    "notch_depth_m": {
+      "value": 4,
+      "unit": "m",
+      "status": "assumed",
+      "source_refs": [
+        "prior:V01-assumptions"
+      ],
+      "depends_on": [],
+      "approval": "pending",
+      "note": "旧V01重建值；非用户确认，不能当作所有项目的默认值",
+      "critical": false,
+      "confidence": "medium"
+    },
+    "wc_corridor_width_m": {
+      "value": 1.8,
+      "unit": "m",
+      "status": "assumed",
+      "source_refs": [
+        "prior:V01-assumptions"
+      ],
+      "depends_on": [],
+      "approval": "pending",
+      "note": "旧V01重建值；非用户确认，不能当作所有项目的默认值",
+      "critical": false,
+      "confidence": "medium"
+    },
+    "level_2_m": {
+      "value": 4,
+      "unit": "m",
+      "status": "derived",
+      "source_refs": [],
+      "depends_on": [
+        "base_elevation_m",
+        "floor_h_1_m",
+        "height_reference"
+      ],
+      "approval": "not_applicable",
+      "note": "0+4；依赖层高含义",
+      "critical": false,
+      "confidence": "high"
+    },
+    "level_3_m": {
+      "value": 7,
+      "unit": "m",
+      "status": "derived",
+      "source_refs": [],
+      "depends_on": [
+        "level_2_m",
+        "floor_h_2_m"
+      ],
+      "approval": "not_applicable",
+      "note": "4+3",
+      "critical": false,
+      "confidence": "high"
+    },
+    "roof_datum_m": {
+      "value": 10,
+      "unit": "m",
+      "status": "derived",
+      "source_refs": [],
+      "depends_on": [
+        "level_3_m",
+        "floor_h_3_m"
+      ],
+      "approval": "not_applicable",
+      "note": "7+3；是屋面参考标高而非建筑最高点",
+      "critical": false,
+      "confidence": "high"
+    },
+    "footprint_area_m2": {
+      "value": 1372,
+      "unit": "m2",
+      "status": "derived",
+      "source_refs": [],
+      "depends_on": [
+        "overall_x_m",
+        "overall_y_m",
+        "connector_width_m",
+        "notch_depth_m"
+      ],
+      "approval": "not_applicable",
+      "note": "50*30-2*16*4；仅在统一H形策略成立时，非实测/法定建筑面积",
+      "critical": false,
+      "confidence": "high"
+    }
+  },
+  "building": {
+    "scale": {
+      "mode": "overall_dimensions",
+      "fact_ids": [
+        "overall_x_m",
+        "overall_y_m"
+      ],
+      "note": "也可使用reference_length或source_units；按资料选择，不是必须手填总长总宽"
+    },
+    "base_elevation_fact": "base_elevation_m",
+    "height_reference_fact": "height_reference",
+    "floors": [
+      {
+        "id": "F01",
+        "name": "1层",
+        "source_ids": [
+          "SRC01"
+        ],
+        "height_fact": "floor_h_1_m"
+      },
+      {
+        "id": "F02",
+        "name": "2层",
+        "source_ids": [
+          "SRC01"
+        ],
+        "height_fact": "floor_h_2_m"
+      },
+      {
+        "id": "F03",
+        "name": "3层",
+        "source_ids": [
+          "SRC01"
+        ],
+        "height_fact": "floor_h_3_m"
+      }
+    ]
+  },
+  "policies": {
+    "footprint": {
+      "mode": "normalize",
+      "conflict_detected": true,
+      "approval": "pending",
+      "approval_ref": null,
+      "note": "旧V01暂定三层统一H形；用户复制了两组选项，没有明确选择"
+    },
+    "stair": {
+      "mode": "align",
+      "conflict_detected": true,
+      "approval": "pending",
+      "approval_ref": null,
+      "note": "旧V01统一核心筒；用户未明确批准移动原图梯位"
+    },
+    "image_warp": {
+      "mode": "similarity_only",
+      "conflict_detected": false,
+      "approval": "not_applicable",
+      "approval_ref": null,
+      "note": "发现非等比拉伸/透视时重新决策"
+    },
+    "changes": [
+      {
+        "id": "CHANGE_WC_CORRIDOR",
+        "title": "东翼新增约1.8米卫生间共用短走道及相关门位调整",
+        "affects_topology": true,
+        "approval": "pending",
+        "approval_ref": null,
+        "note": "旧V01为通达性作出的方案修改，不是原图直接读取"
+      }
+    ]
+  },
+  "outputs": {
+    "formats": [
+      "dxf",
+      "pdf",
+      "glb"
+    ],
+    "dxf_units": "mm",
+    "glb_units": "m",
+    "glb_up_axis": "Y",
+    "pdf_paper": "A3",
+    "pdf_orientation": "landscape",
+    "pdf_scale": 200
+  },
+  "quality": {
+    "numeric_tolerance_m": 0.001,
+    "source_accuracy_note": "未知；数值容差不代表图纸实测精度"
+  },
+  "scope_limits": [
+    "方案级几何重建",
+    "未完成结构/消防/无障碍/荷载/设备工艺/机电专业设计"
+  ],
+  "case_geometry_reference": {
+    "status": "assumed_not_approved",
+    "footprint_xy_m": [
+      [
+        0,
+        0
+      ],
+      [
+        17,
+        0
+      ],
+      [
+        17,
+        4
+      ],
+      [
+        33,
+        4
+      ],
+      [
+        33,
+        0
+      ],
+      [
+        50,
+        0
+      ],
+      [
+        50,
+        30
+      ],
+      [
+        33,
+        30
+      ],
+      [
+        33,
+        26
+      ],
+      [
+        17,
+        26
+      ],
+      [
+        17,
+        30
+      ],
+      [
+        0,
+        30
+      ]
+    ],
+    "stair_shaft_bounds_xy_m": [
+      21.8,
+      16.6,
+      28.2,
+      22.9
+    ],
+    "note": "只作为历史案例记录，不是通用建模输入；审批和几何均需重新核对"
+  }
+}

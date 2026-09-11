@@ -1,0 +1,6 @@
+# Direct dependencies pinned to versions tested for this skill's helper scripts.
+# This is not a complete dependency lock, and does not install a modeling engine.
+ezdxf==1.4.4
+trimesh==4.11.1
+numpy==2.3.5
+PyMuPDF==1.26.7

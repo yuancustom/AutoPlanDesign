@@ -1,0 +1,54 @@
+{
+  "schema_version": "0.1.0",
+  "test_only": true,
+  "case_id": "SYN-L-001",
+  "world_unit": "m",
+  "coordinate_system": "XY_PLAN_Z_UP",
+  "floors": [
+    {
+      "floor_id": "F01",
+      "outline": {
+        "outer": [
+          [
+            0,
+            0
+          ],
+          [
+            30,
+            0
+          ],
+          [
+            30,
+            10
+          ],
+          [
+            10,
+            10
+          ],
+          [
+            10,
+            24
+          ],
+          [
+            0,
+            24
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "holes": []
+      },
+      "height_m": null
+    }
+  ],
+  "dimension_facts": [
+    {
+      "value": 30,
+      "unit": "m",
+      "source": "SYNTHETIC",
+      "evidence_id": "fixture-only-width"
+    }
+  ]
+}

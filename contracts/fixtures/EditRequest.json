@@ -1,0 +1,44 @@
+{
+  "schema_version": "0.1.0",
+  "test_only": true,
+  "request_id": "E1",
+  "idempotency_key": "SYN-L-001:E1",
+  "base_revision_id": "R0",
+  "expected_head_revision_id": "R0",
+  "floor_id": "F01",
+  "instruction": "将选区中的设备示意改为两列机柜，不移动墙体。",
+  "edit_type": "appearance",
+  "mask": {
+    "uri": "fixture://SYN-L-001/mask.png",
+    "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "kind": "FIXTURE_REFERENCE"
+  },
+  "context_mask": null,
+  "mask_white_means": "EDITABLE",
+  "mask_size": [
+    30,
+    24
+  ],
+  "canvas_to_image": [
+    [
+      1,
+      0,
+      0
+    ],
+    [
+      0,
+      1,
+      0
+    ],
+    [
+      0,
+      0,
+      1
+    ]
+  ],
+  "protected_object_ids": [
+    "WALL-001",
+    "STAIR-A"
+  ],
+  "cross_floor_approval_event_id": null
+}

@@ -1,76 +1,35 @@
-# AutoPlanDesign
+# AutoPlanDesign · 三项目协同开发
 
-建筑外轮廓 → 多楼层功能布局 → 本地模型表现 → 中文标注与拼版。
+**开发总控入口：[CONTROL.md](CONTROL.md)**。本轮是架构重整与治理基线，不是三个模型项目已经全部实现。
 
-首个试点：用户指定的 **02 L 形建筑，1F / 2F / 3F**。代码按用户要求直接维护在 `main`，不要求创建功能分支或 Pull Request。
+| 独立项目 | 职责 | 当前状态 |
+|---|---|---|
+| [P1 / outline-plan](projects/outline-plan/README.md) | 带尺寸闭合轮廓 → 多楼层初步平面图及几何数据 | 旧 L 形示意基线保留；米制校准、通用布局与模型对比待开发 |
+| [P2 / region-edit](projects/region-edit/README.md) | 涂抹区域＋文字 → 局部修改、版本与过程记录 | 项目骨架与输入协议；画布、模型及持久化审计待开发 |
+| [P3 / plan-delivery](projects/plan-delivery/README.md) | 已确认平面图 → 共享建筑几何 → DXF / PDF / GLB | 已导入用户既有 Skill 的16个文件；Schema和两个检查脚本写入被平台拦截，完整适配为BLOCKED |
 
-## 当前能力与验证边界
+## 架构原则
 
-| 环节 | 当前结果 |
-|---|---|
-| L 形来源绑定、三层功能布局 | 已实现；三层各 10 个空间 |
-| 房间、门、核心与轮廓几何检查 | 已通过 |
-| 自动测试 | 本次发布前 47 项通过；远端结果见 Actions |
-| 三层 PNG / SVG / 中文 / 离线 HTML | 程序生成，首跑可以复现 |
-| ComfyUI 接口工作流 | dry-run 已通过；mock 只验证协议 |
-| 用户 Mac 上的真实模型推理 | 尚未验证 |
-| 任意轮廓自动最优排房 | 未实现；当前为明确的 L 形布局提案 |
-| 消防、结构、设备工艺审查 | 未执行；输出不是施工图 |
+三个项目独立安装、测试、发布；不互相导入内部代码。当前采用单仓库多项目，后续可分别迁出为独立仓库，不提前创建新仓库。最终在 [agent/](agent/README.md) 通过版本化文件协议调用三个能力，不把代码重新混在一起。
 
-**程序几何图、dry-run、mock、真实模型原图是不同产物，不能相互冒充。** GitHub Actions 只运行几何与协议测试，不下载或运行生图模型。
+图片是展示与交互入口；几何、尺度、版本和证据是串联依据。只有图片的外部输入必须补校准/识图步骤，不能把旧几何套在修改后的图片上。
 
-## 先跑一栋三层
+## 开发者先读
 
-在 Apple Silicon Mac mini 16GB 上，新建独立环境，不与现有 IOPaint / DocRes 环境混用：
+[总控文档](CONTROL.md) · [任务台账](governance/backlog.json) · [接口合同](contracts/README.md) · [模型实验规范](benchmarks/PROTOCOL.md) · [迁移记录](docs/MIGRATION.md)
 
 ```bash
-git clone https://github.com/yuancustom/AutoPlanDesign.git
-cd AutoPlanDesign
-conda create -n autoplan-tools python=3.12 -y
-conda activate autoplan-tools
-python -m pip install -r requirements.txt
-python -m pytest -q
-python scripts/run_pilot.py --mode geometry --job examples/l_shape_job.json --out runs/l-shape-first
-open runs/l-shape-first/preview.html
+python -m pip install -r requirements-dev.txt
+python tools/check_governance.py
+python -m pytest tests -q
 ```
 
-每次使用新的输出目录，不覆盖旧结果。没有 Conda 时可用独立 Python 3.11+ venv。
+各项目可单独运行：进入项目目录，`python -m pip install -e .`，然后 `python -m <模块名> --capabilities`。当前新包只返回真实能力状态，不会生成假平面图、假修改记录或假三维成果。
 
-工作流预演，不加载模型：
+模块名分别为 `autoplan_outline`、`autoplan_region`、`autoplan_delivery`。旧 P1 基线的复现见其项目 README。
 
-```bash
-python scripts/run_pilot.py --mode dry-run --job examples/l_shape_job.json --out runs/l-shape-dry-01
-```
+## 当前真实边界
 
-本机 ComfyUI、SD1.5 checkpoint 和匹配 Canny ControlNet 安装好后，填写 `configs/comfy_sd15.json`：
+没有在用户 Mac mini 16GB 上完成真实模型对比；所有候选模型实验初始化为 `NOT_RUN`。CI 仅验证治理配置、接口样例、独立项目骨架、历史基线；P3原检查脚本因导入阻塞未运行。不把 CI 成功、mock、dry-run 当成模型效果或工程合规。
 
-```bash
-python scripts/doctor.py --out runs/mac-check.json
-python scripts/run_pilot.py --mode render --ack-concept-only --job examples/l_shape_job.json --out runs/l-shape-model-01
-```
-
-真实模式只访问本机服务，三个楼层串行；失败即停止，不转云端。模型输出保存在 `generated/`，合成结果叫 `board_model_unreviewed.png`。必须检查原始模型图片后再做概念验收。
-
-## 楼层分工
-
-1F：辅助机房、机柜区、配电辅助间、运行办公室与值班室。
-
-2F：控制室、通信机柜区、技术办公室、小会议室与资料室。
-
-3F：综合办公室、会议室、资料室、设备保障间与值班室。
-
-三层固定楼梯 A/B、男女卫和公共交通；楼梯数量只是演示配置，不是合规结论。只有一个输入轮廓，因此明确假设三层同轮廓；不发明退台、悬挑、米制比例尺或北向。
-
-## 文件入口
-
-- [Agent 入口](AGENTS.md) 与 [现行 Skill](skills/outline-floorplan-local/SKILL.md)
-- [Mac 首跑说明](docs/MAC_FIRST_RUN.md)
-- [实施与验证报告](docs/IMPLEMENTATION_REPORT.md)
-- [源图处理说明](docs/PROVENANCE.md)
-- [L 形三层布局数据](examples/l_shape_job.json)
-- [概念验收模板](templates/review.example.json)
-- [几何测试与预览产物](../../actions/workflows/tests.yml)：成功运行后可在该次运行的 Artifacts 中查看 `l-shape-geometry-and-protocol`。
-
-仓库中的 `examples/source_crops/02.png` 是从原图的浅蓝选区得到的二色栅格，**不是原始彩色截图**。已逐像素核对选区一致；原截图哈希和处理规则见 `examples/source_crops/PROVENANCE.json`。不以形状名称重新想象外轮廓。
-
-模型权重、字体、凭据及用户本机环境均不随仓库提交。
+旧根目录实现整体保存在 `projects/outline-plan/baseline/`，对应提交 `9be671d75484f497f474aa5b8df23a0a02d429ad`；Git 历史保留。按用户约定直接维护 `main`，本次不创建分支或 PR。

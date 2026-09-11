@@ -1,0 +1,106 @@
+{
+  "source_archive": "floorplan-to-dxf-pdf-glb-skill-v1.0.zip",
+  "source_archive_sha256": "3ad9028c17f40c24222515966b5822d151db560956822e68054dd5eacd52ba9f",
+  "source": "user-provided Library Skill package; retrieved for requested integration",
+  "skill_name": "floorplan-to-dxf-pdf-glb",
+  "version": "1.0.0",
+  "import_status": "PARTIAL_BLOCKED",
+  "engine_status": "NOT_IMPLEMENTED_BY_IMPORT",
+  "files": {
+    "floorplan-to-dxf-pdf-glb/README.md": {
+      "bytes": 6226,
+      "sha256": "e356530863c5d448b9dcbb2a057055b0dcb61eeccb82f7acebc2943c9f647fb5"
+    },
+    "floorplan-to-dxf-pdf-glb/SKILL.md": {
+      "bytes": 10943,
+      "sha256": "f21e52a29603214f0b860b1cbfa076d9fab57d64d8fb4961afb7681032639c37"
+    },
+    "floorplan-to-dxf-pdf-glb/TESTING.md": {
+      "bytes": 2428,
+      "sha256": "dd4dd504f502d05c1ac63a8bbc8d6f89a7c2a52a96bc09dfb2b0e2774531ee7d"
+    },
+    "floorplan-to-dxf-pdf-glb/assets/intake-template.md": {
+      "bytes": 2429,
+      "sha256": "ede7c13749667b78b41374a886a555b3d08bcac6928949b15dfc385eb5269005"
+    },
+    "floorplan-to-dxf-pdf-glb/assets/project.h50x30-draft.json": {
+      "bytes": 10750,
+      "sha256": "17e3c25cad491a90224ee1b3842e9c9e32fc9dc15d66f21808ba53ee6f354665"
+    },
+    "floorplan-to-dxf-pdf-glb/assets/project.schema.json": {
+      "bytes": 10535,
+      "sha256": "69352a68d6d3ea9123a5fae5f292d0c2e7e5d3e1d5f81280e5a3e86608b6fb2c"
+    },
+    "floorplan-to-dxf-pdf-glb/assets/project.template.json": {
+      "bytes": 5561,
+      "sha256": "bfa901c927679b6c20bc57c4104adaaf866d1aae5f28aee66cd4f39ed49fcda9"
+    },
+    "floorplan-to-dxf-pdf-glb/references/01-input-and-evidence.md": {
+      "bytes": 5909,
+      "sha256": "769f512bed014c3daf0d7baf3ad6c8518db6bf20167c843513df453b9817128e"
+    },
+    "floorplan-to-dxf-pdf-glb/references/02-reconstruction.md": {
+      "bytes": 6106,
+      "sha256": "5e24ce8b407b97ca481d412a33cab6e0680bdf207567df745f8f0013105faf1a"
+    },
+    "floorplan-to-dxf-pdf-glb/references/03-export-contract.md": {
+      "bytes": 5277,
+      "sha256": "8ce25d7b2fdbdc8c54c76e51676962af1e50c6b33266cd1fac1accfd7a72a7cf"
+    },
+    "floorplan-to-dxf-pdf-glb/references/04-validation-and-delivery.md": {
+      "bytes": 4977,
+      "sha256": "a4fa48c3468720fe58b2651c870fbab36bfe45cb255829aca8641b74f4c02fed"
+    },
+    "floorplan-to-dxf-pdf-glb/references/05-h50x30-case.md": {
+      "bytes": 3513,
+      "sha256": "bd2f866c0c977ec1f2ed509ad4ad88d9cfb7f3514cc9818e9247c53fbe79e4ec"
+    },
+    "floorplan-to-dxf-pdf-glb/references/06-shared-geometry.md": {
+      "bytes": 3780,
+      "sha256": "b59831582fcc35fad1962d4363b74b94ecca2a94d8f4762f6d0504ba6b6d0849"
+    },
+    "floorplan-to-dxf-pdf-glb/references/sources.md": {
+      "bytes": 1923,
+      "sha256": "30a51511c2577699d5b0fdb3571556d30a827b65ab78bc199f5fc8037f9d7222"
+    },
+    "floorplan-to-dxf-pdf-glb/requirements-tests.txt": {
+      "bytes": 67,
+      "sha256": "6a2f4d53bc7d1525c905d4b4062eff1ccf45ccef4625e441fa3e6779ca0adcaf"
+    },
+    "floorplan-to-dxf-pdf-glb/requirements-validation.txt": {
+      "bytes": 221,
+      "sha256": "fd0d406d7907116ca4fe122465e067ae0b8a8920689ea8a2c51136152b26d533"
+    },
+    "floorplan-to-dxf-pdf-glb/scripts/test_validators.py": {
+      "bytes": 10046,
+      "sha256": "e4b9f6282108b83a26de98b47236bdb5ab77c4f93211d427565ece0e7f978c78"
+    },
+    "floorplan-to-dxf-pdf-glb/scripts/validate_deliverables.py": {
+      "bytes": 17453,
+      "sha256": "311d7c9546d86734f7726b25f298d9419f5df42b59dc937e2cbe1866ecb5ced7"
+    },
+    "floorplan-to-dxf-pdf-glb/scripts/validate_project.py": {
+      "bytes": 18544,
+      "sha256": "ccba84ece4aa324d5c5b198325ecdb0b6117bc40743b16107cbc8e9702113162"
+    }
+  },
+  "blocked_files": {
+    "floorplan-to-dxf-pdf-glb/assets/project.schema.json": {
+      "reason": "OpenAI tool safety check blocked the GitHub write; not retried or encoded differently",
+      "expected_sha256": "69352a68d6d3ea9123a5fae5f292d0c2e7e5d3e1d5f81280e5a3e86608b6fb2c",
+      "resolution": "Needs an allowed write of the original file before full Skill integration can be accepted"
+    },
+    "floorplan-to-dxf-pdf-glb/scripts/validate_deliverables.py": {
+      "reason": "OpenAI tool safety check blocked the GitHub write; not retried or encoded differently",
+      "expected_sha256": "311d7c9546d86734f7726b25f298d9419f5df42b59dc937e2cbe1866ecb5ced7",
+      "resolution": "Requires an allowed original-file import before P3 integration acceptance; do not work around the tool block"
+    },
+    "floorplan-to-dxf-pdf-glb/scripts/validate_project.py": {
+      "reason": "OpenAI tool safety check blocked the GitHub write; not retried or encoded differently",
+      "expected_sha256": "ccba84ece4aa324d5c5b198325ecdb0b6117bc40743b16107cbc8e9702113162",
+      "resolution": "Requires an allowed original-file import before P3 integration acceptance; do not work around the tool block"
+    }
+  },
+  "present_files_count": 16,
+  "expected_files_count": 19
+}
