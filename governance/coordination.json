@@ -1,0 +1,86 @@
+{
+  "schema_version": "1.0.0",
+  "purpose": "Coordination register only; not task-status source, atomic lock server, or deployed scheduler",
+  "recorded_at": "2026-09-11",
+  "baseline_main_sha": "69a4a99a505d997a3ed3e64126216886a2168653",
+  "status_sources": {
+    "product": "CONTROL.md",
+    "tasks": "governance/backlog.json",
+    "delivery": "governance/delivery_status.json",
+    "experiments": "benchmarks/",
+    "protocol": "governance/PARALLEL_CONTROL.md"
+  },
+  "mode": {
+    "remote_branch": "main",
+    "feature_branches": false,
+    "pull_requests": false,
+    "force_push": false,
+    "parallel_development": true,
+    "serialized_publication": true,
+    "coordination_automation": "NOT_IMPLEMENTED"
+  },
+  "coordinator": {
+    "actor_id": null,
+    "assignment_status": "UNASSIGNED",
+    "sole_writer_for_shared_records": true
+  },
+  "lanes": [
+    {
+      "project": "P1",
+      "root": "projects/outline-plan/",
+      "wip_limit": 1,
+      "read_only": [
+        "projects/outline-plan/baseline/"
+      ],
+      "suggested_parent_task": "P1-01"
+    },
+    {
+      "project": "P2",
+      "root": "projects/region-edit/",
+      "wip_limit": 1,
+      "read_only": [],
+      "suggested_parent_task": "P2-01"
+    },
+    {
+      "project": "P3",
+      "root": "projects/plan-delivery/",
+      "wip_limit": 1,
+      "read_only": [
+        "projects/plan-delivery/vendor/",
+        "projects/plan-delivery/IMPORT.json"
+      ],
+      "suggested_parent_task": "P3-01",
+      "start_policy": "Parent remains BLOCKED; independent preparation needs a separately registered scoped subtask"
+    }
+  ],
+  "shared_write_owner": "COORDINATOR",
+  "shared_paths": [
+    "CONTROL.md",
+    "AGENTS.md",
+    "README.md",
+    "governance/",
+    "contracts/",
+    "benchmarks/",
+    "agent/",
+    "tools/",
+    "tests/",
+    ".github/",
+    "requirements-dev.txt"
+  ],
+  "active_claims": [],
+  "publication_queue": [],
+  "publication_lease": null,
+  "hardware_profiles": [
+    {
+      "profile_id": "mac-mini-16gb-primary",
+      "memory_gb": 16,
+      "actual_chip": null,
+      "os_version": null,
+      "verification": "NOT_RUN",
+      "max_inference_concurrency": 1
+    }
+  ],
+  "hardware_queue": [],
+  "hardware_leases": [],
+  "registration_note": "Empty registers mean no claim has been registered here; not proof that no external session is running. Claims require a real coordinator confirmation. No production task or user acceptance was advanced by creating this file."
+}

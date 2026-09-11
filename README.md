@@ -4,11 +4,21 @@
 
 **模型准备：[P1–P3 统一模型需求清单｜Mac mini M4 16GB](docs/MODEL_REQUIREMENTS_M4_16GB.md)**。包含首批与可选模型、权重/量化/运行器、三步骤分工、下载顺序、资源策略及同源对比；实机模型验收仍为 NOT_RUN。
 
+## 三路并行开发入口
+
+**[P1–P3 并行开发控制总览](governance/PARALLEL_CONTROL.md)**：职责/写入边界、任务认领、main串行发布、合同变更、提前联调、五维验收和Mac设备排队。它补充CONTROL，不建立第二套任务台账。
+
+[协调登记（尚无认领）](governance/coordination.json) · [开工与交接模板](governance/templates/WORK_SESSION.md) · [合同变更模板](governance/templates/CONTRACT_CHANGE.md) · [联调报告模板](governance/templates/INTEGRATION_REPORT.md)
+
+各路从项目局部AGENTS.md开始；代码可并行写，发布与同一机器的模型任务串行。登记规则不等于已经部署自动调度器；实际任务仍以backlog和交付状态为准。
+
 ## 文档与原型入口（v0.3）
 
 [三项目文档与代码双交付计划](governance/DOC_CODE_DELIVERY.md) · [分维度交付状态](governance/delivery_status.json)
 
 **P1：[可操作原型源码](projects/outline-plan/prototype/index.html) · [运行说明](projects/outline-plan/prototype/README.md) · [交互与体验路线](projects/outline-plan/docs/UX_PROTOTYPE_GUIDE.md)**
+
+**P2：[区域编辑原型](projects/region-edit/prototype/index.html) · [运行说明](projects/region-edit/prototype/README.md) · [详细设计](projects/region-edit/docs/DETAILED_DESIGN_V1.md)**。候选为程序演示，不是已接入模型。
 
 **P3：[完整开发设计 v1.0：详细平面图图片重建、BIMFACE 展示与多模型评测](projects/plan-delivery/docs/P3_DEVELOPMENT_v1.0.md)**。用户认可本版方向后，24 章 Markdown 全文已原样同步到 main；[同步与来源核验](projects/plan-delivery/docs/SYNC_v1.0.json)。这是开发依据，不表示业务功能或模型实验已完成。
 
@@ -19,7 +29,7 @@ P1原型支持受限SVG导入/绘制/拖点、尺寸校准与SVG/PNG导出、分
 | 独立项目 | 职责 | 当前状态 |
 |---|---|---|
 | [P1 / outline-plan](projects/outline-plan/README.md) | 带尺寸闭合轮廓 → 多楼层初步平面图及几何数据 | 交互原型与设计文档；旧L形基线保留；正式API/通用布局/模型对比待开发 |
-| [P2 / region-edit](projects/region-edit/README.md) | 涂抹区域＋文字 → 局部修改、版本与过程记录 | [文档到代码计划](projects/region-edit/docs/DOC_CODE_PLAN.md)；已有包骨架，业务能力未实现 |
+| [P2 / region-edit](projects/region-edit/README.md) | 涂抹区域＋文字 → 局部修改、版本与过程记录 | [详细设计](projects/region-edit/docs/DETAILED_DESIGN_V1.md)与可操作原型；生产持久化/局部模型/几何同步待开发 |
 | [P3 / plan-delivery](projects/plan-delivery/README.md) | 确认平面 → 三维与二维图纸，网页查看 | [文档到代码与Viewer计划](projects/plan-delivery/docs/DOC_CODE_PLAN.md)；原Skill缺3文件的导入阻塞保留 |
 
 ## 架构原则
