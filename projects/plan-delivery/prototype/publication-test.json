@@ -1,0 +1,26 @@
+{
+  "task_id": "P3-UX-01",
+  "date": "2026-09-11",
+  "prototype": "canvas-first-v3",
+  "runtime_git_blobs_match_staged_tree": true,
+  "javascript_syntax": "PASS",
+  "inline_browser_regression": {
+    "status": "PASS", "checks": 62, "loading": "page.set_content",
+    "browser": "Chromium", "playwright": "1.57.0",
+    "input": "repository-built standalone, compressed sample"
+  },
+  "directory_and_reload_local": {
+    "status": "BLOCKED_BY_ENVIRONMENT",
+    "error": "net::ERR_BLOCKED_BY_ADMINISTRATOR at loopback navigation",
+    "not_an_app_pass": true
+  },
+  "ci": "PENDING_ON_COMMIT; see Actions for the actual result",
+  "initial_test_attempt": "Execution host ended first attempt at 120 seconds; the full rerun completed all 62 checks.",
+  "model_execution": "NOT_RUN",
+  "bimface": "NOT_RUN",
+  "actual_dxf_pdf_glb_export": "NOT_RUN",
+  "source_preview_changed_by_annotation": false,
+  "not_tested": ["User Mac browser", "production multi-user persistence", "engineering compliance"],
+  "standalone_sha256": "ca3fc0f26ed3e84d808b998253f08abaec2d4b5f413fae437fb56758181525cc",
+  "full_interaction_result_sha256": "3fad9b1453a47d389ab58be9742ae7949beff9437d021b724230421f587c8119"
+}

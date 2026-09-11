@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><title>AutoPlanDesign · P3 图纸重建工作台</title>
+<link rel="stylesheet" href="style-1.css"><link rel="stylesheet" href="style-2.css"><link rel="stylesheet" href="style-3.css"></head>
+<body>
+<div id="icons" hidden><svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0" aria-hidden="true"><defs>
+<symbol id="i-edit" viewBox="0 0 24 24"><path d="m15 4 5 5M4 20l4-1 12-12a2.3 2.3 0 0 0-4-4L4 15l-1 6z"/></symbol>
+<symbol id="i-brush" viewBox="0 0 24 24"><path d="m14 5 5 5M9 15l10-12 3 3-12 10M9 15c-5-3-4 4-7 5 6 1 9-1 7-5z"/></symbol>
+<symbol id="i-erase" viewBox="0 0 24 24"><path d="m4 13 10-10 8 8-10 10H8l-6-6zM7 10l8 8M13 21h9"/></symbol>
+<symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 3 7v5c0 5 9 9 9 9s9-4 9-9V7zM8 12l3 3 5-6"/></symbol>
+<symbol id="i-move" viewBox="0 0 24 24"><path d="M12 2v20M2 12h20m-7-7-3-3-3 3m6 14-3 3-3-3M5 9l-3 3 3 3m14-6 3 3-3 3"/></symbol>
+<symbol id="i-rect" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="1" stroke-dasharray="4 2"/></symbol>
+<symbol id="i-undo" viewBox="0 0 24 24"><path d="M8 4 3 9l5 5M3 9h10a7 7 0 0 1 0 14" transform="translate(0,-2)"/></symbol>
+<symbol id="i-redo" viewBox="0 0 24 24"><path d="m16 4 5 5-5 5m5-5H11a7 7 0 0 0 0 14" transform="translate(0,-2)"/></symbol>
+<symbol id="i-history" viewBox="0 0 24 24"><path d="M4 7a9 9 0 1 1-1 8M3 3v5h5M12 7v5l4 2"/></symbol>
+<symbol id="i-compare" viewBox="0 0 24 24"><path d="M12 2v20M9 4H4v16h5m6-16h5v16h-5"/><path d="m7 10-2 2 2 2m10-4 2 2-2 2"/></symbol>
+<symbol id="i-log" viewBox="0 0 24 24"><rect x="5" y="3" width="15" height="18" rx="2"/><path d="M9 7h7M9 11h7M9 15h4M2 7h3M2 12h3M2 17h3"/></symbol>
+<symbol id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9 8a3 3 0 0 1 6 1c0 2-3 2-3 4m0 3h.01"/></symbol>
+<symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h16m-6-6 6 6-6 6"/></symbol>
+<symbol id="i-upload" viewBox="0 0 24 24"><path d="M12 16V3m-5 5 5-5 5 5M4 15v6h16v-6"/></symbol>
+<symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v13m-5-5 5 5 5-5M4 16v5h16v-5"/></symbol>
+<symbol id="i-save" viewBox="0 0 24 24"><path d="M4 3h13l4 4v14H3V3zM7 3v6h10V3M7 21v-8h10v8"/></symbol>
+<symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+<symbol id="i-minus" viewBox="0 0 24 24"><path d="M5 12h14"/></symbol>
+<symbol id="i-fit" viewBox="0 0 24 24"><path d="M8 3H3v5m13-5h5v5M3 16v5h5m8 0h5v-5M8 8h8v8H8z"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+<symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
+<symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 3 10 5-10 5L2 8zm-10 9 10 5 10-5M2 17l10 5 10-5"/></symbol>
+<symbol id="i-building" viewBox="0 0 24 24"><path d="M3 21V7h8V3h10v18H3zm4-10v2m0 3v2m8-11h2m-2 4h2m-2 4h2m-6 2v4"/></symbol>
+<symbol id="i-spark" viewBox="0 0 24 24"><path d="m12 3 2.5 6.5L21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5zM20 2v4M18 4h4"/></symbol>
+<symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v6m0-10h.01"/></symbol>
+<symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V6a4 4 0 0 1 8 0v4m-4 4v3"/></symbol>
+<symbol id="i-dotgrid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></symbol>
+<symbol id="i-trash" viewBox="0 0 24 24"><path d="M3 6h18M8 6V3h8v3M5 6l1 15h12l1-15M10 10v7m4-7v7"/></symbol>
+<symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l4 2"/></symbol>
+<symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol>
+<symbol id="i-search" viewBox="0 0 24 24"><circle cx="10" cy="10" r="6"/><path d="m15 15 6 6"/></symbol>
+<symbol id="i-cursor" viewBox="0 0 24 24"><path d="M5 3v17l5-5 4 6 3-2-4-6 7-1z"/></symbol>
+<symbol id="i-chevron" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+<symbol id="i-arrow-left" viewBox="0 0 24 24"><path d="M20 12H4m6-6-6 6 6 6"/></symbol>
+<symbol id="i-more" viewBox="0 0 24 24"><circle cx="5" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/></symbol>
+<symbol id="i-scan" viewBox="0 0 24 24"><path d="M8 3H3v5m13-5h5v5M3 16v5h5m8 0h5v-5M7 8h10M7 12h10M7 16h6"/></symbol>
+<symbol id="i-cube" viewBox="0 0 24 24"><path d="m12 2 9 5v10l-9 5-9-5V7zm0 10v10M3 7l9 5 9-5M7 4.8l9 5"/></symbol></defs></svg></div>
+<section id="home" class="home">
+ <header class="home-nav"><a class="brand" href="#" data-home aria-label="AutoPlanDesign 项目首页"><span class="brand-mark"><svg viewBox="0 0 32 34" fill="none" aria-hidden="true"><path d="M3 30 15 3h5l10 27h-6L18 12 9 30z" stroke="currentColor" stroke-width="1.6"/><path d="M11 23h14M15 3l3 9" stroke="currentColor" stroke-width="1.6"/></svg></span><span>AutoPlanDesign<small>DESIGN WORKSPACE</small></span></a><div class="flex"><span class="prototype-label"><i></i>本机交互原型</span><button class="iconbtn" data-action="help" aria-label="原型说明"><svg class="icon"><use href="#i-help"/></svg></button></div></header>
+ <main class="home-content">
+  <div class="home-heading"><div><div class="eyebrow">P3 / PLAN RECONSTRUCTION</div><h1>从图纸，继续你的设计。</h1><p>选择项目，复核识别，再查看图纸与空间。</p></div><button class="btn primary" id="newProject"><svg class="icon"><use href="#i-plus"/></svg>新建项目</button></div>
+  <div class="home-filter"><div class="flex"><b>我的项目</b><span class="count" id="projectCount">3</span></div><label class="search"><svg class="icon"><use href="#i-search"/></svg><input id="projectSearch" aria-label="搜索项目" placeholder="搜索项目名称"></label></div>
+  <div id="projectGrid" class="project-grid"></div>
+  <section class="home-how"><span class="eyebrow">工作方式</span><div><b>01</b> 导入详细平面图<span>→</span><b>02</b> 在原图上复核与补框<span>→</span><b>03</b> 生成并审阅二维与三维</div></section>
+  <footer class="home-footer"><span><i class="local-dot"></i>图片只在本浏览器处理</span><span>演示识别与生成不调用模型，也不连接 BIMFACE。<button class="textbtn" data-action="help">了解边界</button></span></footer>
+ </main>
+</section>
+<section id="workspace" class="workspace hidden">
+ <header class="topbar">
+  <div class="project-crumb"><button class="iconbtn" id="backHome" aria-label="返回项目选择" title="返回项目选择"><svg class="icon"><use href="#i-arrow-left"/></svg></button><span class="brand-mark small-mark"><svg viewBox="0 0 32 34" fill="none" aria-hidden="true"><path d="M3 30 15 3h5l10 27h-6L18 12 9 30z" stroke="currentColor" stroke-width="1.6"/><path d="M11 23h14M15 3l3 9" stroke="currentColor" stroke-width="1.6"/></svg></span><span class="slash">/</span><button id="projectMenu" class="crumb-button" aria-label="切换项目"><strong id="projectName"></strong><svg class="icon chevron"><use href="#i-chevron"/></svg></button><span class="module-tag">P3</span></div>
+  <nav class="workflow" aria-label="流程"><button id="stepSource" data-step="source"><span>1</span>图纸</button><i></i><button id="stepReview" data-step="review" class="current"><span>2</span>识别复核</button><i></i><button id="stepResult" data-step="result"><span>3</span>成果审阅</button></nav>
+  <div class="header-actions"><span class="demo-mark">交互演示</span><button class="iconbtn" id="historyBtn" aria-label="版本与过程" title="版本与过程"><svg class="icon"><use href="#i-history"/></svg></button><button class="iconbtn" id="moreBtn" aria-label="更多操作" title="更多操作"><svg class="icon"><use href="#i-more"/></svg></button><button class="btn primary" id="generateBtn"><svg class="icon"><use href="#i-spark"/></svg><span>生成图纸与模型</span><svg class="icon tail"><use href="#i-arrow"/></svg></button></div>
+ </header>
+ <div class="contextbar"><div class="flex source-controls"><button class="floor-selector" id="floorBtn" aria-label="选择楼层"><svg class="icon"><use href="#i-layers"/></svg><b id="floorName">1F</b><span id="floorDesc">设备与运维</span><svg class="icon chevron"><use href="#i-chevron"/></svg></button><span class="hairline"></span><button id="revisionBtn" class="revision-btn" aria-label="查看版本"><span class="mono" id="revisionLabel">r0</span><svg class="icon chevron"><use href="#i-chevron"/></svg></button><span id="saveStatus" class="save-status">仅本浏览器</span></div><div class="flex contextual-actions"><button class="textbtn" id="recognizeBtn"><svg class="icon"><use href="#i-scan"/></svg><span>载入识别演示</span></button><button class="textbtn issue-trigger" id="issuesBtn"><span class="tiny-dot"></span><span id="issuesLabel">待复核</span></button><button class="iconbtn" data-action="help" aria-label="快捷键与说明" title="快捷键与说明"><svg class="icon"><use href="#i-help"/></svg></button></div></div>
+ <main class="studio" id="studio">
+  <section class="paper-area" id="paperArea" aria-label="原图工作区">
+   <div class="canvas-caption"><span id="sourceCaption">原始平面图</span><span id="sourceFlag" class="subtle-badge">P2 参考图</span></div>
+   <div id="stage" class="stage"><canvas id="planCanvas" tabindex="0" aria-label="平面图画布，可点击识别框或拖动补框"></canvas></div>
+   <div class="floating-tools" role="toolbar" aria-label="画布工具">
+    <button class="tool active" data-tool="select" title="选择对象 V" aria-label="选择对象"><svg class="icon"><use href="#i-cursor"/></svg></button>
+    <button class="tool" data-tool="rect" title="拉框补充 R" aria-label="拉框补充"><svg class="icon"><use href="#i-rect"/></svg></button>
+    <button class="tool" data-tool="pan" title="平移 H / 按住空格" aria-label="平移画布"><svg class="icon"><use href="#i-move"/></svg></button>
+    <span></span><button class="tool" id="undoBtn" title="撤销 Ctrl/⌘ Z" aria-label="撤销"><svg class="icon"><use href="#i-undo"/></svg></button><button class="tool" id="redoBtn" title="重做 Ctrl/⌘ Shift Z" aria-label="重做"><svg class="icon"><use href="#i-redo"/></svg></button>
+    <span></span><button class="tool active" id="overlayBtn" title="显示/隐藏识别框 O" aria-label="显示识别框" aria-pressed="true"><svg class="icon"><use href="#i-eye"/></svg></button>
+   </div>
+   <div class="canvas-bottom"><span class="canvas-help" id="canvasHelp"><kbd>R</kbd> 拉框补充 <i>·</i> 滚轮缩放 <i>·</i> 空格拖动</span><div class="zoom-controls"><button class="iconbtn" id="zoomOut" aria-label="缩小"><svg class="icon"><use href="#i-minus"/></svg></button><output id="zoomValue">100%</output><button class="iconbtn" id="zoomIn" aria-label="放大"><svg class="icon"><use href="#i-plus"/></svg></button><span></span><button class="iconbtn" id="fitBtn" aria-label="适应画布" title="适应画布 F"><svg class="icon"><use href="#i-fit"/></svg></button></div></div>
+   <div id="annotationEditor" class="annotation-popover hidden" role="dialog" aria-label="对象补充表单"></div>
+   <div id="emptyCanvas" class="empty-canvas hidden"><div class="empty-symbol"><svg class="icon"><use href="#i-upload"/></svg></div><h2>把详细平面图放在这里</h2><p>拖入图片，或点击导入。原图不会被标注修改。</p><button class="btn primary" id="emptyUpload">导入平面图</button><span>PNG / JPG / WebP · 最大 12 MB / 1200 万像素</span></div>
+  </section>
+  <section id="modelArea" class="model-area hidden"><header><div class="flex"><svg class="icon"><use href="#i-cube"/></svg><b>空间审阅</b><span class="subtle-badge amber">预设几何 · 非识图重建</span></div><button class="iconbtn" id="closeModel" aria-label="关闭三维分屏"><svg class="icon"><use href="#i-close"/></svg></button></header><div id="modelStage"><canvas id="modelCanvas" aria-label="预设三维空间示意，拖动旋转"></canvas></div><div class="model-tools"><button class="btn" id="explodeBtn"><svg class="icon"><use href="#i-layers"/></svg>分层展开</button><button class="btn" id="modelReset">重置视角</button></div><div class="model-note">拖动旋转 · 未接 BIMFACE · 不代表原图真实三维模型</div></section>
+  <aside id="sideDrawer" class="side-drawer hidden" aria-label="按需面板"></aside>
+ </main>
+ <footer class="statusbar"><div class="flex"><span id="coordInfo" class="mono">原图坐标 —</span><span class="status-divider">·</span><span id="imageSize"></span></div><div class="flex"><span id="objectSummary"></span><span class="status-divider">·</span><span class="legend-dot teal"></span><span>预设候选</span><span class="legend-dot orange"></span><span>待复核</span><span class="legend-dot blue"></span><span>人工补充</span></div><span class="boundary">图片保持不变 / 尺度未确认</span></footer>
+ <div id="resultRibbon" class="result-ribbon hidden"></div>
+ <section id="taskDock" class="task-dock hidden" aria-label="当前演示进度" aria-live="polite"></section>
+</section>
+<div id="popoverRoot"></div><div id="modalRoot"></div><div class="toast-stack" id="toasts" aria-live="polite"></div>
+<input id="imageInput" type="file" accept="image/png,image/jpeg,image/webp" hidden multiple>
+<input id="projectInput" type="file" accept="application/json,.json" hidden>
+<script src="sample.js"></script><script src="app-1.js"></script><script src="app-2.js"></script><script src="app-3.js"></script><script src="app-4.js"></script><script src="app-5.js"></script><script src="app-6.js"></script><script src="app-7.js"></script><script src="app-8.js"></script>
+</body></html>

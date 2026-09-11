@@ -1,0 +1,36 @@
+{
+  "task_id": "P3-UX-01",
+  "version": "3.0-interaction",
+  "source_html_sha256": "317d0003db3d572454900ebe100b67592b5a299ba39d52be52d834799a6fa605",
+  "source_zip_sha256": "a6bdacb01623e0f1b7e99fcda0bafb7f3b4c69a0482b94e901dfdf0d325ac0c6",
+  "source_js_sha256": "98e94ba8436b1f04586ed0704e85cdb375388a29fa1fa1cdc40a37cbf27e2c58",
+  "source_css_sha256": "2c41be6bb217954ea60fa35cbe456cc363afe8301145d711fc3563f5b57f1628",
+  "source_reference_png_sha256": "3ddaa2aea778c90579d945936000ecb7149de1da55374bd01786bc0c559296ad",
+  "published_preview_sha256": "889ef58ff8931cfbdb2ac0fa51c16d5367320edef0bdca2bef64a122b1b6f22b",
+  "sample_js_git_blob": "dbcf5d812f7716c1415d5ac7b33735b5b83a2683",
+  "preview_format": "WebP quality 90; 768x512; not pixel-identical to source PNG",
+  "packaging": "Classic scripts split at complete boundaries; CSS split by full rules; icons remain inline; standalone builder provided.",
+  "small_source_changes": [
+    "Sample filename/provenance describe the compressed preview.",
+    "fitView reads width/height from asset() rather than the equivalent local alias."
+  ],
+  "authorization": "User explicitly asked to sync the approved P3 V3 prototype to yuancustom/AutoPlanDesign main.",
+  "model_executed": false,
+  "bimface_connected": false,
+  "not_included": ["User browser IndexedDB data", "private imported plans", "exported private project history", "model weights", "fonts", "credentials"],
+  "runtime_files": {
+    "app-1.js": "bf744cab15550434d3401cce07ebe7198e9a3140b78b33e050d4c7eb4b5ad9ac",
+    "app-2.js": "d43e4788a481ce09d6af41e3481efc3ee22eaf0e73d756f8f630801702b64167",
+    "app-3.js": "e5f5604356aa667c8a16429637f86fd9b601afb090a8073c3b51d2704b745aa7",
+    "app-4.js": "258cf3b4e8e6fdcb0c0d339c8ab8f12c82bb63bc9be6851a42ddb9534680ecd4",
+    "app-5.js": "e5de23a613976b48b566c85f05863b1e0ccd94e79d9227030a6b7a7a96c800ac",
+    "app-6.js": "a766789c6647f48978a2eb28cb3b811ac79e62b4e55efb93d51cd218979d3db7",
+    "app-7.js": "4d801c1a840cb1425601d0a3aa1bb471fb8132587eb10944465d28049f890e33",
+    "app-8.js": "3ae724af55348bd4f2bd1e9830e55471922b0c69a940358d94c99697db22b82d",
+    "index.html": "e13c9bb2134a70157765c9e2f931dfe2390bd1956b907ec2f14ff211a9a45184",
+    "sample.js": "b1bd633b3905313514b8316a1f13506b04fcf141df65ff883320421fc24f04d0",
+    "style-1.css": "e1e5ba48cf3e543c0328a616a3bf06f55615be02dc374f72b60ef6703333b40a",
+    "style-2.css": "46d6c2400c699c99026431e09f671ebb57b1ff7b8d44f1a45b11a2f43603d0cb",
+    "style-3.css": "da259fcc9933fc8a994e7ae7d5d1e98058304525267f18fe33b0074287cd994b"
+  }
+}

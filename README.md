@@ -20,6 +20,8 @@
 
 **P2：[区域编辑原型](projects/region-edit/prototype/index.html) · [运行说明](projects/region-edit/prototype/README.md) · [详细设计](projects/region-edit/docs/DETAILED_DESIGN_V1.md)**。候选为程序演示，不是已接入模型。
 
+**P3：[画布优先 V3 原型](projects/plan-delivery/prototype/index.html) · [运行与操作说明](projects/plan-delivery/prototype/README.md) · [原型测试范围](projects/plan-delivery/prototype/TEST_REPORT.md)**。独立项目首页、按需补框与版本面板、可折叠进度和二维/三维示意；模型与 BIMFACE 未接入。
+
 **P3：[完整开发设计 v1.0：详细平面图图片重建、BIMFACE 展示与多模型评测](projects/plan-delivery/docs/P3_DEVELOPMENT_v1.0.md)**。用户认可本版方向后，24 章 Markdown 全文已原样同步到 main；[同步与来源核验](projects/plan-delivery/docs/SYNC_v1.0.json)。这是开发依据，不表示业务功能或模型实验已完成。
 
 GitHub文件页显示源码，不会自动运行HTML。将原型保存到本机后用浏览器打开，或按运行说明启动本机静态预览。没有配置Pages或公开原型服务。
@@ -30,7 +32,7 @@ P1原型支持受限SVG导入/绘制/拖点、尺寸校准与SVG/PNG导出、分
 |---|---|---|
 | [P1 / outline-plan](projects/outline-plan/README.md) | 带尺寸闭合轮廓 → 多楼层初步平面图及几何数据 | 交互原型与设计文档；旧L形基线保留；正式API/通用布局/模型对比待开发 |
 | [P2 / region-edit](projects/region-edit/README.md) | 涂抹区域＋文字 → 局部修改、版本与过程记录 | [详细设计](projects/region-edit/docs/DETAILED_DESIGN_V1.md)与可操作原型；生产持久化/局部模型/几何同步待开发 |
-| [P3 / plan-delivery](projects/plan-delivery/README.md) | 确认平面 → 三维与二维图纸，网页查看 | [文档到代码与Viewer计划](projects/plan-delivery/docs/DOC_CODE_PLAN.md)；原Skill缺3文件的导入阻塞保留 |
+| [P3 / plan-delivery](projects/plan-delivery/README.md) | 确认平面 → 三维与二维图纸，网页查看 | V3画布原型与[Viewer计划](projects/plan-delivery/docs/DOC_CODE_PLAN.md)；原Skill缺3文件的导入阻塞保留 |
 
 ## 架构原则
 
@@ -49,7 +51,7 @@ python -m pytest tests -q
 node --test projects/outline-plan/prototype/tests/core.test.cjs
 ```
 
-各项目的Python包仍只提供能力探测骨架。P1浏览器原型是单独代码，不表示包内已实现正式后端；P2/P3尚未新增业务实现。对应能力状态和阻塞分别记录，不用一个完成标志代替。
+各项目的Python包仍只提供能力探测骨架。三个浏览器原型是单独代码，不表示已实现正式后端、真实模型和完整工程交付。对应能力状态和阻塞分别记录，不用一个完成标志代替。
 
 ## 当前真实边界
 
