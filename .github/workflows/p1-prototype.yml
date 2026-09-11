@@ -31,3 +31,20 @@ jobs:
                   assert Path(name).is_file(), name
           print('Documentation references checked; no model was run.')
           PY
+      - name: Publish reviewable prototype and development documents (not model results)
+        uses: actions/upload-artifact@v4
+        with:
+          name: p1-interactive-prototype-and-project-docs
+          if-no-files-found: error
+          retention-days: 14
+          path: |
+            README.md
+            CONTROL.md
+            AGENTS.md
+            governance/DOC_CODE_DELIVERY.md
+            governance/delivery_status.json
+            projects/outline-plan/docs/
+            projects/outline-plan/preparation/
+            projects/outline-plan/prototype/
+            projects/region-edit/docs/
+            projects/plan-delivery/docs/
