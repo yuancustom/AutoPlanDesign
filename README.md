@@ -8,6 +8,8 @@
 
 **P1：[可操作原型源码](projects/outline-plan/prototype/index.html) · [运行说明](projects/outline-plan/prototype/README.md) · [交互与体验路线](projects/outline-plan/docs/UX_PROTOTYPE_GUIDE.md)**
 
+**P3：[完整开发设计 v1.0：详细平面图图片重建、BIMFACE 展示与多模型评测](projects/plan-delivery/docs/P3_DEVELOPMENT_v1.0.md)**。用户认可本版方向后，24 章 Markdown 全文已原样同步到 main；[同步与来源核验](projects/plan-delivery/docs/SYNC_v1.0.json)。这是开发依据，不表示业务功能或模型实验已完成。
+
 GitHub文件页显示源码，不会自动运行HTML。将原型保存到本机后用浏览器打开，或按运行说明启动本机静态预览。没有配置Pages或公开原型服务。
 
 P1原型支持受限SVG导入/绘制/拖点、尺寸校准与SVG/PNG导出、分层数量校验、模型意向与快照、示例流程。结果是固定合成示意，不按参数排房，不调用模型，不做正式审批。
