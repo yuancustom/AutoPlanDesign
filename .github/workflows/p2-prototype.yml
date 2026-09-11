@@ -1,0 +1,28 @@
+name: P2 interaction prototype (no model)
+on:
+  push:
+    paths:
+      - 'projects/region-edit/prototype/**'
+      - '.github/workflows/p2-prototype.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  browser:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install playwright==1.56.0
+      - run: python -m playwright install --with-deps chromium
+      - name: Build standalone HTML
+        run: python projects/region-edit/prototype/build_standalone.py --out runs/p2-prototype/P2_interactive.html
+      - name: Browser regression, directory and standalone
+        run: python projects/region-edit/prototype/smoke_test.py --standalone runs/p2-prototype/P2_interactive.html --out runs/p2-prototype/browser-test.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: p2-interactive-prototype
+          path: runs/p2-prototype/

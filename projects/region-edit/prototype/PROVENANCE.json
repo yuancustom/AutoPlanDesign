@@ -1,0 +1,12 @@
+{
+  "original_html_sha256": "8dd2de21ee1f553a3e5a7b0950a0cde990db655102af6384ccf4c850f8df8330",
+  "original_html_bytes": 274215,
+  "source_image_sha256": "3ddaa2aea778c90579d945936000ecb7149de1da55374bd01786bc0c559296ad",
+  "published_image_sha256": "889ef58ff8931cfbdb2ac0fa51c16d5367320edef0bdca2bef64a122b1b6f22b",
+  "sample_dimensions": [768, 512],
+  "sample_encoding": "WebP quality=90; preview recompression, not pixel-identical to original PNG",
+  "interaction_code": "Original classic script split at complete function boundaries; SAMPLE_URL moved to sample.js. No model/network integration. Styles split with centered badge rule preserved.",
+  "publication_authorization": "User explicitly requested syncing this prototype to their GitHub repository in this conversation.",
+  "not_included": ["browser IndexedDB history", "exported user projects", "model weights", "fonts", "credentials"],
+  "model_execution": "NOT_RUN"
+}

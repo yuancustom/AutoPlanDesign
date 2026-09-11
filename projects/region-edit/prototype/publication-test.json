@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "results": [
+    {
+      "mode": "inline-assembled",
+      "status": "PASS",
+      "scope": ["five_pages", "mask_undo_redo", "permission_confirmation", "candidate_before_accept", "outside_and_protected_pixels", "accept_revision", "append_restore", "no_external_requests"],
+      "model_execution": "NOT_RUN",
+      "page_errors": [],
+      "external_requests": []
+    }
+  ]
+}

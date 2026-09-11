@@ -28,11 +28,11 @@
       "id": "P2-DOC-CODE-01",
       "project": "P2",
       "documentation": "PLAN_WRITTEN",
-      "prototype": "NOT_STARTED",
+      "prototype": "BROWSER_TESTED",
       "implementation": "EXISTING_SCAFFOLD_ONLY",
       "model_execution": "NOT_RUN",
       "human_acceptance": "PENDING",
-      "evidence": ["projects/region-edit/docs/DOC_CODE_PLAN.md"]
+      "evidence": ["projects/region-edit/docs/DOC_CODE_PLAN.md", "projects/region-edit/prototype/TEST_REPORT.md"]
     },
     {
       "id": "P3-DOC-CODE-01",
@@ -43,6 +43,17 @@
       "model_execution": "NOT_RUN",
       "human_acceptance": "PENDING",
       "evidence": ["projects/plan-delivery/docs/DOC_CODE_PLAN.md", "projects/plan-delivery/IMPORT.json"]
+    },
+    {
+      "id": "P2-UX-01",
+      "project": "P2",
+      "documentation": "WRITTEN",
+      "prototype": "BROWSER_TESTED",
+      "implementation": "PROTOTYPE_ONLY",
+      "model_execution": "NOT_RUN",
+      "human_acceptance": "PENDING",
+      "parent_tasks": ["P2-01", "P2-02", "P2-03", "P2-04", "P2-05"],
+      "evidence": ["projects/region-edit/prototype/index.html", "projects/region-edit/prototype/README.md", "projects/region-edit/prototype/TEST_REPORT.md", "projects/region-edit/prototype/publication-test.json"]
     }
   ],
   "master_backlog_statuses_changed": false

@@ -1,0 +1,43 @@
+{
+  "kind": "HTML_INTERACTION_PROTOTYPE_TEST",
+  "tested_with": "System Chromium via Playwright / set_content",
+  "results": [
+    {"case":"初始导入与空选区禁止生成","result":"PASS","detail":"r0 / IMAGE_ONLY；无真实尺寸；按钮禁用"},
+    {"case":"五个页面可导航","result":"PASS","detail":"工作台、候选、版本、过程、操作与实现"},
+    {"case":"草稿撤销重做与正式版本分离","result":"PASS","detail":"撤销/重做恢复相同授权像素数；r0未改变"},
+    {"case":"橡皮只擦编辑蒙版并可撤销","result":"PASS","detail":""},
+    {"case":"手工保护笔与保护区橡皮","result":"PASS","detail":"擦除手工保护恢复编辑权，不擦原图"},
+    {"case":"鼠标笔画落在原图像素坐标","result":"PASS","detail":""},
+    {"case":"缩放后同一原图位置误差不超过1像素","result":"PASS","detail":"{'before': [276, 366, 324, 406], 'zoomed': [276, 366, 324, 406]}"},
+    {"case":"键盘撤销与重做","result":"PASS","detail":""},
+    {"case":"先批准范围再产生候选，不自动覆盖版本","result":"PASS","detail":""},
+    {"case":"独立解码检查：授权区外与保护区变化均为0","result":"PASS","detail":"授权区内变化13806像素；没有模型执行"},
+    {"case":"滑杆、并排与差异视图可切换","result":"PASS","detail":""},
+    {"case":"拒绝候选留痕，不产生正式版本","result":"PASS","detail":""},
+    {"case":"接受候选追加r1，原r0内容不变","result":"PASS","detail":""},
+    {"case":"取消演示请求后保留记录且不改当前版本","result":"PASS","detail":""},
+    {"case":"文字示例可接受为第二次修改版本","result":"PASS","detail":""},
+    {"case":"恢复r0新增r3，r1和r2仍保留","result":"PASS","detail":"parent=r2；restore_from=r0；恢复内容与r0逐字节一致"},
+    {"case":"撤回上一次版本修改通过新恢复版本实现","result":"PASS","detail":""},
+    {"case":"过期来源候选不可覆盖更新后的当前版本","result":"PASS","detail":"在同一页面模拟来源变更；不代表跨标签事务实现"},
+    {"case":"过程筛选与参数详情展开","result":"PASS","detail":""},
+    {"case":"保存工程导出包含原图与完整版本JSON","result":"PASS","detail":""},
+    {"case":"JSON工程重新导入恢复版本、候选与历史","result":"PASS","detail":""},
+    {"case":"非法工程拒绝导入，当前会话不受影响","result":"PASS","detail":""},
+    {"case":"1280/820/390宽度下五个页面无横向溢出","result":"PASS","detail":""},
+    {"case":"导入自有图片开始新会话且不假装自动识别保护区","result":"PASS","detail":""},
+    {"case":"DPR=2下原图笔画范围与DPR=1一致","result":"PASS","detail":""},
+    {"case":"浏览器脚本无未捕获错误","result":"PASS","detail":""},
+    {"case":"应用执行期间无外部网络或模型请求","result":"PASS","detail":""}
+  ],
+  "page_errors": [],
+  "external_requests": [],
+  "model_execution": "NOT_RUN",
+  "limitations": [
+    "本环境浏览器不允许file/localhost导航，使用内联HTML渲染测试，未关闭任何浏览器保护。",
+    "内联about:blank不提供持久存储权限，已验证降级提示及工程JSON导出/导入；IndexedDB跨页面持久化未在本环境验证。",
+    "不是用户Mac实机、Safari或跨标签并发验证。",
+    "未测试真实模型、建筑几何同步或工程规范。"
+  ],
+  "screenshots": ["原型_01_涂抹工作台.png", "原型_02_权限确认.png", "原型_03_候选对比.png", "原型_04_恢复确认.png", "原型_05_版本历史.png", "原型_06_过程记录.png", "原型_07_操作与实现.png"]
+}
