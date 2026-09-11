@@ -2,6 +2,8 @@
 
 **开发总控入口：[CONTROL.md](CONTROL.md)**。三个独立项目分别交付文档、代码、测试和使用说明，再组合为完整Agent；不能把文档或交互原型当成生产系统已经实现。
 
+**模型准备：[P1–P3 统一模型需求清单｜Mac mini M4 16GB](docs/MODEL_REQUIREMENTS_M4_16GB.md)**。包含首批与可选模型、权重/量化/运行器、三步骤分工、下载顺序、资源策略及同源对比；实机模型验收仍为 NOT_RUN。
+
 ## 文档与原型入口（v0.3）
 
 [三项目文档与代码双交付计划](governance/DOC_CODE_DELIVERY.md) · [分维度交付状态](governance/delivery_status.json)
